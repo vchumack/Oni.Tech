@@ -1,3 +1,102 @@
 @import './shared/styles/variables';
 
-// ресет и глобальные стили
+// reset and global styles
+
+/* Specifying box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+label:hover,
+input:hover,
+button:hover {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Removing internal indents*/
+ul,
+ol {
+  padding: 0;
+}
+
+/* Removing the outer margins */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Removing standard styling for all ul and il that have the class attribute */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Elements a that do not have a class,
+reset to default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Simplify work with images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Inherit fonts for intents and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Removing all animations and transitions for people who prefer not to use them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Applying styles to buttons */
+button {
+  margin: 0;
+  cursor: pointer;
+}
+
+body {
+  font-family: $fontFamilyBase;
+
+  /* Default basic settings for body*/
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+}
