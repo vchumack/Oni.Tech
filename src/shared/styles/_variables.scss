@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
 $mobile: 375px;
 $tablet: 768px;
+$desktopSmall: 1100px;
 $desktopMiddle: 1440px;
 $desktop: 1920px;
 
-$fontFamilyBase: 'Lato', sans-serif;
+$fontFamilyBase: "Lato", sans-serif;
 
 $transition: 0.4s all ease-in-out;
 
-$primary-text-color: #FFFFFF;
+$primary-text-color: #ffffff;
 $secondary-text-color: #000000;
 
-$primary-bg-color: #FFFFFF;
+$primary-bg-color: #ffffff;
 $secondary-bg-color: #000000;
-$third-bg-color: #F5E9D6;
-$fourth-bg-color: #F4E9D6;
+$third-bg-color: #f5e9d6;
+$fourth-bg-color: #f4e9d6;

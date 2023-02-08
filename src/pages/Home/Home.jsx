@@ -4,7 +4,7 @@ import "../Home/Home.module.scss";
 export const Home = () => {
   return (
     <>
-      <div>Home</div>
+      <div></div>
       <Hero />
     </>
   );

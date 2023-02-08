@@ -95,6 +95,7 @@ button {
 }
 
 body {
+  overflow: hidden;
   font-family: $fontFamilyBase;
 
   /* Default basic settings for body*/
@@ -109,6 +110,6 @@ body {
   padding: 0 16px;
   @media (min-width: 768px) {
     // max-width: 1200px;
-    padding: 0;
+    padding: 0 80px;
   }
 }
