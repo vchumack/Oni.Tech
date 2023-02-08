@@ -4,7 +4,7 @@ import "../ContactUs/ContactUs.module.scss";
 export const ContactUs = () => {
   return (
     <>
-      <div>ContactUs</div>
+      <div></div>
       <ContactForm />
     </>
   );
