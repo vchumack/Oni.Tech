@@ -1,4 +1,4 @@
-@import './shared/styles/variables';
+@import "./shared/styles/variables";
 
 // reset and global styles
 
@@ -7,6 +7,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 label:hover,
@@ -61,7 +62,6 @@ img {
   display: block;
 }
 
-
 /* Inherit fonts for intents and buttons */
 input,
 button,
@@ -80,7 +80,15 @@ select {
   }
 }
 
+// Section
+
+section {
+  padding: 100px 0 77px 0;
+  height: 100vh;
+}
+
 /* Applying styles to buttons */
+
 button {
   margin: 0;
   cursor: pointer;
@@ -99,4 +107,8 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 16px;
+  @media (min-width: 768px) {
+    // max-width: 1200px;
+    padding: 0;
+  }
 }
