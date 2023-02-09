@@ -1,9 +1,9 @@
 import "../Expertise/Expertise.module.scss";
 
 export const Expertise = () => {
-  return (
-    <>
-      <div></div>
-    </>
-  );
+	return (
+		<section id="expertise">
+			<div>expertise</div>
+		</section>
+	);
 };

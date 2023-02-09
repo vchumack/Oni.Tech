@@ -1,5 +1,9 @@
 import "../Portfolio/Portfolio.module.scss";
 
 export const Portfolio = () => {
-  return <div></div>;
+	return (
+		<section id="portfolio">
+			<div>portfolio</div>
+		</section>
+	);
 };
