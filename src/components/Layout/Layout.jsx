@@ -1,29 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+
+import useScrollSnap from "react-use-scroll-snap";
+
+import { hideElements } from "../../functions/hideElementsOnScroll";
+import { activateNavLink } from "../../functions/activateNavLink";
 
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 
 export const Layout = ({ children }) => {
+	const scrollRef = useRef(null);
+	const headerRef = useRef(null);
+	const footerRef = useRef(null);
+
 	const [active, setActive] = useState("home");
-	const [currentSection, setCurrentSection] = useState(1);
+	const currentSlide = useScrollSnap({
+		ref: scrollRef,
+		duration: 1,
+		delay: 0,
+	});
+
+	const handleScroll = () => {
+		const sections = document.querySelectorAll(".anchor");
+
+		hideElements(headerRef, footerRef);
+		activateNavLink(sections, active, setActive);
+	};
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const sections = document.querySelectorAll("section");
-			let activeSection = active;
-			let current = currentSection;
-
-			sections.forEach((section) => {
-				const { top, bottom } = section.getBoundingClientRect();
-				if (top <= 0 && bottom > 0) {
-					activeSection = section.id;
-					current = section.getAttribute("current");
-				}
-			});
-			setActive(activeSection);
-			setCurrentSection(current);
-		};
-
 		window.addEventListener("scroll", handleScroll);
 
 		return () => {
@@ -33,9 +37,9 @@ export const Layout = ({ children }) => {
 
 	return (
 		<>
-			<Header active={active} />
-			<main>{children}</main>
-			<Footer current={currentSection} />
+			<Header active={active} headerRef={headerRef} />
+			<main ref={scrollRef}>{children}</main>
+			<Footer current={currentSlide} footerRef={footerRef} />
 		</>
 	);
 };
