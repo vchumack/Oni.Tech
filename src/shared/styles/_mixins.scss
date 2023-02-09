@@ -1,93 +1,56 @@
 @import "./variables";
 
 @mixin flex($content: flex-start, $align: baseline) {
-  display: flex;
+   display: flex;
 
-  @if ($content !=flex-start) {
-    justify-content: $content;
-  }
+   @if ($content !=flex-start) {
+      justify-content: $content;
+   }
 
-  @if ($align !=baseline) {
-    align-items: $align;
-  }
+   @if ($align !=baseline) {
+      align-items: $align;
+   }
 }
 
-// @mixin before() {
-//    content: '';
-//    position: absolute;
-//    left: 50%;
-//    bottom: -5px;
-//    width: 0;
-//    height: 1.5px;
-
-//    transition: $transition;
-//    transform: translateX(-50%);
-// }
-
-// @mixin wrapperTitle() {
-//    text-align: center;
-
-//    h2 {
-//       margin-left: auto;
-//       margin-right: auto;
-//       margin-bottom: 33px;
-//       max-width: 360px;
-
-//       font-size: 30px;
-//       line-height: 1.47;
-//       letter-spacing: .02em;
-//       font-weight: 500;
-
-//       color: $primary-text-color;
-
-//       @include media('tablet') {
-//          max-width: 500px;
-//          font-size: 40px;
-//       }
-
-//       @include media('desktopMiddle') {
-//          max-width: 650px;
-//          font-size: 50px;
-//       }
-//    }
-// }
-
 @mixin media($type) {
-  @if $type == "mobile" {
-    @media screen and (min-width: $mobile) {
-      @content;
-    }
-  }
+   @if $type =="mobile" {
+      @media screen and (min-width: $mobile) {
+         @content;
+      }
+   }
 
-  @if $type == "tablet" {
-    @media screen and (min-width: $tablet) {
-      @content;
-    }
-  }
+   @if $type =="tablet" {
+      @media screen and (min-width: $tablet) {
+         @content;
+      }
+   }
 
-  @if $type == "desktopMiddle" {
-    @media screen and (min-width: $desktopMiddle) {
-      @content;
-    }
-  }
-  @if $type == "desktopSmall" {
-    @media screen and (min-width: $desktopSmall) {
-      @content;
-    }
-  }
+   @if $type =="desktopSmall" {
+      @media screen and (min-width: $desktopSmall) {
+         @content;
+      }
+   }
 
-  @if $type == "desktop" {
-    @media screen and (min-width: $desktop) {
-      @content;
-    }
-  }
+   @if $type =="desktopMiddle" {
+      @media screen and (min-width: $desktopMiddle) {
+         @content;
+      }
+   }
 
-  @if $type == "retina" {
-    @media (min-device-pixel-ratio: 2),
+
+   @if $type =="desktop" {
+      @media screen and (min-width: $desktop) {
+         @content;
+      }
+   }
+
+   @if $type =="retina" {
+
+      @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      @content;
-    }
-  }
+         @content;
+      }
+   }
 }

@@ -9,7 +9,7 @@ import "./App.scss";
 function App() {
   return (
     <Layout>
-      <Home />
+      {/* <Home /> */}
       <Expertise />
       <Workflow />
       <Portfolio />
