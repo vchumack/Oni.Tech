@@ -1,6 +1,6 @@
 import style from "./MobileNav.module.scss";
 
-export const MobileNav = ({ isOpen, toggleBurger }) => {
+export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 	return (
 		<>
 			<div className={isOpen ? style.overlayOpen : style.overlayClosed} />
@@ -16,7 +16,11 @@ export const MobileNav = ({ isOpen, toggleBurger }) => {
 					<li className={style.navItem}>
 						<a
 							href="#home"
-							className={style.navLink}
+							className={
+								active === "home"
+									? `${style.navLink} active`
+									: style.navLink
+							}
 							onClick={toggleBurger}
 						>
 							Home
@@ -25,7 +29,11 @@ export const MobileNav = ({ isOpen, toggleBurger }) => {
 					<li className={style.navItem}>
 						<a
 							href="#expertise"
-							className={style.navLink}
+							className={
+								active === "expertise"
+									? `active ${style.navLink}`
+									: style.navLink
+							}
 							onClick={toggleBurger}
 						>
 							Expertise
@@ -34,7 +42,11 @@ export const MobileNav = ({ isOpen, toggleBurger }) => {
 					<li className={style.navItem}>
 						<a
 							href="#process"
-							className={style.navLink}
+							className={
+								active === "process"
+									? `active ${style.navLink}`
+									: style.navLink
+							}
 							onClick={toggleBurger}
 						>
 							Work Process
@@ -43,7 +55,11 @@ export const MobileNav = ({ isOpen, toggleBurger }) => {
 					<li className={style.navItem}>
 						<a
 							href="#portfolio"
-							className={style.navLink}
+							className={
+								active === "portfolio"
+									? `active ${style.navLink}`
+									: style.navLink
+							}
 							onClick={toggleBurger}
 						>
 							Portfolio
@@ -52,7 +68,11 @@ export const MobileNav = ({ isOpen, toggleBurger }) => {
 					<li className={style.navItem}>
 						<a
 							href="#contact"
-							className={style.navLink}
+							className={
+								active === "contact"
+									? `${style.navLink} active`
+									: style.navLink
+							}
 							onClick={toggleBurger}
 						>
 							Get in touch

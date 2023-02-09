@@ -115,3 +115,7 @@ body {
 		padding: 0 80px;
 	}
 }
+
+.active {
+	border-bottom: 1px solid $primary-bg-color;
+}

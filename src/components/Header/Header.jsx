@@ -22,7 +22,7 @@ export const Header = () => {
 					activeSection = section.id;
 				}
 			});
-			setActiveLink(activeSection);
+			setActive(activeSection);
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -37,16 +37,13 @@ export const Header = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const setActiveLink = (name) => {
-		setActive(name);
-	};
 	return (
 		<header className={style.header}>
 			<div className={`container ${style.wrapper}`}>
 				<Logo />
 				{isBigScreen ? (
 					<>
-						<NavBar setActiveLink={setActiveLink} active={active} />
+						<NavBar active={active} />
 						<div className={style.contact}>
 							<span className={style.elipse} />
 							<a
@@ -56,7 +53,6 @@ export const Header = () => {
 										? `${style.navLink} active`
 										: style.navLink
 								}
-								onClick={() => setActiveLink("contact")}
 							>
 								Get in touch
 							</a>
@@ -78,6 +74,7 @@ export const Header = () => {
 						<MobileNav
 							isOpen={isOpen}
 							toggleBurger={toggleBurger}
+							active={active}
 						/>
 					</div>
 				)}
