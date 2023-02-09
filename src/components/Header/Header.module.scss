@@ -31,9 +31,6 @@
 		font-weight: 500;
 	}
 }
-.active {
-	border-bottom: 1px solid $primary-bg-color;
-}
 
 .contact {
 	@include flex(center, center);

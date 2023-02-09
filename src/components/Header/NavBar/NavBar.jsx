@@ -1,13 +1,10 @@
 import style from "./NavBar.module.scss";
 
-export const NavBar = ({ setActiveLink, active }) => {
+export const NavBar = ({ active }) => {
 	return (
 		<nav className={style.nav}>
 			<ul className={style.navList}>
-				<li
-					className={style.navItem}
-					onClick={() => setActiveLink("home")}
-				>
+				<li className={style.navItem}>
 					<a
 						href="#home"
 						className={
@@ -19,10 +16,7 @@ export const NavBar = ({ setActiveLink, active }) => {
 						Home
 					</a>
 				</li>
-				<li
-					className={style.navItem}
-					onClick={() => setActiveLink("expertise")}
-				>
+				<li className={style.navItem}>
 					<a
 						href="#expertise"
 						className={
@@ -34,10 +28,7 @@ export const NavBar = ({ setActiveLink, active }) => {
 						Expertise
 					</a>
 				</li>
-				<li
-					className={style.navItem}
-					onClick={() => setActiveLink("process")}
-				>
+				<li className={style.navItem}>
 					<a
 						href="#process"
 						className={
@@ -49,10 +40,7 @@ export const NavBar = ({ setActiveLink, active }) => {
 						Work Process
 					</a>
 				</li>
-				<li
-					className={style.navItem}
-					onClick={() => setActiveLink("portfolio")}
-				>
+				<li className={style.navItem}>
 					<a
 						href="#portfolio"
 						className={
