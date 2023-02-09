@@ -19,7 +19,8 @@ const MARQUE_ITEMS = [
 
 export const Hero = () => {
 	return (
-		<section className={style.hero} id="home">
+		<section className={style.hero}>
+			<div className="anchor" id="home" />
 			<div className="container">
 				<div className={style.hero__wrap}>
 					<h1 className={style.hero__title}>

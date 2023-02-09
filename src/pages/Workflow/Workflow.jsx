@@ -2,7 +2,8 @@ import "../Workflow/Workflow.module.scss";
 
 export const Workflow = () => {
 	return (
-		<section id="process" current="3">
+		<section>
+			<div className="anchor" id="process" />
 			<div>workflow</div>
 		</section>
 	);
