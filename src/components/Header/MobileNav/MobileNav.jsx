@@ -1,3 +1,5 @@
+import { links } from "../../data/header";
+
 import style from "./MobileNav.module.scss";
 
 export const MobileNav = ({ isOpen, toggleBurger, active }) => {
@@ -13,58 +15,22 @@ export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 					</span>
 				)}
 				<ul className={style.navList}>
-					<li className={style.navItem}>
-						<a
-							href="#home"
-							className={
-								active === "home"
-									? `${style.navLink} active`
-									: style.navLink
-							}
-							onClick={toggleBurger}
-						>
-							Home
-						</a>
-					</li>
-					<li className={style.navItem}>
-						<a
-							href="#expertise"
-							className={
-								active === "expertise"
-									? `active ${style.navLink}`
-									: style.navLink
-							}
-							onClick={toggleBurger}
-						>
-							Expertise
-						</a>
-					</li>
-					<li className={style.navItem}>
-						<a
-							href="#process"
-							className={
-								active === "process"
-									? `active ${style.navLink}`
-									: style.navLink
-							}
-							onClick={toggleBurger}
-						>
-							Work Process
-						</a>
-					</li>
-					<li className={style.navItem}>
-						<a
-							href="#portfolio"
-							className={
-								active === "portfolio"
-									? `active ${style.navLink}`
-									: style.navLink
-							}
-							onClick={toggleBurger}
-						>
-							Portfolio
-						</a>
-					</li>
+					{links.map((link) => (
+						<li className={style.navItem} key={link.key}>
+							<a
+								href={link.href}
+								className={
+									active === link.current
+										? `${style.navLink} active`
+										: style.navLink
+								}
+								onClick={toggleBurger}
+							>
+								{link.text}
+							</a>
+						</li>
+					))}
+
 					<li className={style.navItem}>
 						<a
 							href="#contact"

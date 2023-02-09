@@ -6,18 +6,22 @@ import { NavBar } from "./NavBar/NavBar";
 import { MobileNav } from "./MobileNav/MobileNav";
 
 import style from "../Header/Header.module.scss";
+import { removeScroll } from "../../functions/removeScroll";
 
-export const Header = ({active}) => {
+export const Header = ({ active, headerRef }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	
+
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
 	const toggleBurger = () => {
 		setIsOpen(!isOpen);
 	};
+	useEffect(() => {
+		removeScroll(isOpen);
+	}, [isOpen]);
 
 	return (
-		<header className={style.header}>
+		<header className={style.header} ref={headerRef}>
 			<div className={`container ${style.wrapper}`}>
 				<Logo />
 				{isBigScreen ? (
