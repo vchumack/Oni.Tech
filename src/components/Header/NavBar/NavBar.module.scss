@@ -1,0 +1,26 @@
+@import "../../../shared/styles/variables";
+@import "../../../shared/styles/mixins";
+
+.nav {
+	width: fit-content;
+
+	@include flex(center, center);
+}
+
+.navList {
+	gap: 30px;
+	@include flex(center, center);
+}
+
+.navLink {
+	color: $primary-text-color;
+	font-size: 12px;
+	font-weight: 400;
+	@include media("desktopSmall") {
+		font-size: 16px;
+		font-weight: 500;
+	}
+}
+.active {
+	border-bottom: 1px solid $primary-bg-color;
+}
