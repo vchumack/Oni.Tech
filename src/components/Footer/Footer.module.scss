@@ -1,2 +1,64 @@
 @import "../../shared//styles/variables";
 @import "../../shared/styles/mixins";
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 24px 0px;
+	background-color: transparent;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	gap: 6px;
+
+	@include media(tablet) {
+		gap: 12px;
+	}
+}
+
+.counter {
+	@include flex(start, center);
+	gap: 4px;
+
+	span {
+		color: $primary-text-color;
+		font-weight: 400;
+		font-style: italic;
+		font-style: 20px;
+		line-height: 1.4em;
+	}
+}
+
+.rights {
+	@include flex(flex-start, center);
+	gap: 12px;
+
+	div {
+		@include flex(flex-start, center);
+		gap: 6px;
+		span {
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: $primary-bg-color;
+		}
+
+		p {
+			font-style: 16px;
+			font-weight: 500;
+			color: $primary-text-color;
+			letter-spacing: 1.4px;
+		}
+	}
+
+	p {
+		font-weight: 300;
+		font-style: 16px;
+		color: $primary-text-color;
+	}
+}

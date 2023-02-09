@@ -4,6 +4,7 @@ import { ReactComponent as Tg } from "../../assets/images/contacts/bxl-telegram.
 import style from "../ContactUs/ContactUs.module.scss";
 
 export const ContactUs = () => {
+<<<<<<< HEAD
   return (
     <section id="contact" className={style.contactUs}>
       <div className="container">
@@ -33,4 +34,12 @@ export const ContactUs = () => {
       </div>
     </section>
   );
+=======
+	return (
+		<>
+			<div></div>
+			<ContactForm />
+		</>
+	);
+>>>>>>> 274b95ebe32de9466107be01290ad07c5d897fca
 };
