@@ -5,7 +5,8 @@ import style from "../ContactUs/ContactUs.module.scss";
 
 export const ContactUs = () => {
 	return (
-		<section id="contact" className={style.contactUs}>
+		<section className={style.contactUs}>
+			<div className="anchor" id="contact" />
 			<div className="container">
 				<div className={style.box}>
 					<div className={style.contactBox}>
