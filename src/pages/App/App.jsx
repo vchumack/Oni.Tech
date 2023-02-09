@@ -8,6 +8,7 @@ import { Workflow } from "../Workflow/Workflow";
 import "./App.scss";
 
 function App() {
+
 	return (
 		<Layout>
 			<Home />
