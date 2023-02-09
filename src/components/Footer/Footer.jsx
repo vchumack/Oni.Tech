@@ -1,11 +1,11 @@
 import style from "../Footer/Footer.module.scss";
 
-export const Footer = () => {
+export const Footer = ({ current }) => {
 	return (
 		<footer className={style.footer}>
 			<div className={`container ${style.wrapper}`}>
 				<div className={style.counter}>
-					<span>01</span>
+					<span>0{current}</span>
 					<span>/</span>
 					<span>05</span>
 				</div>
