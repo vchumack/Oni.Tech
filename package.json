@@ -14,11 +14,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.3.5",
-<<<<<<< HEAD
     "react-hook-form": "^7.43.1",
-=======
     "react-responsive": "^9.0.2",
->>>>>>> 274b95ebe32de9466107be01290ad07c5d897fca
     "sass": "^1.58.0"
   },
   "devDependencies": {
