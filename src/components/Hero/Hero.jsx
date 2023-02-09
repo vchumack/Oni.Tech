@@ -11,6 +11,10 @@ const MARQUE_ITEMS = [
 	{ key: "6", text: "FinTech" },
 	{ key: "7", text: "crypto" },
 	{ key: "8", text: "Payments" },
+	{ key: "9", text: "E-commerce" },
+	{ key: "10", text: "FinTech" },
+	{ key: "11", text: "crypto" },
+	{ key: "12", text: "Payments" },
 ];
 
 export const Hero = () => {

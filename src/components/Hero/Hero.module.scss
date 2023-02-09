@@ -2,149 +2,157 @@
 @import "../../shared/styles/mixins";
 
 .hero {
-  position: relative;
-  color: $primary-text-color;
+	position: relative;
+	color: $primary-text-color;
 
-  background: url("../../assets/hero-bg-mob.png");
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 262px;
-  background-color: $secondary-bg-color;
+	background: url("../../assets/hero-bg-mob.png");
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: 262px;
+	background-color: $secondary-bg-color;
 
-  @include media(tablet) {
-    // background: url("../../assets/hero-bg-desc.png");
-    // background-repeat: no-repeat;
-    // background-position: 0 20%;
-    // background-size: 334px;
-    // background-color: $secondary-bg-color;
-    background: no-repeat 100% 100% url("../../assets/hero-bg-desc.png"),
-      no-repeat 95% 0% url(../../assets/hero-circle.png);
-    background-color: $secondary-bg-color;
-    background-size: 334px, 200px;
-  }
+	@include media(desktopSmall) {
+		background: no-repeat 100% 100% url("../../assets/hero-bg-desc.png"),
+			no-repeat 95% 0% url(../../assets/hero-circle.png);
+		background-color: $secondary-bg-color;
+		background-size: 334px, 200px;
+	}
 
-  &__wrap {
-    @include media(desktopSmall) {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-  }
+	@include media(desktop) {
+		background: no-repeat 100% 100% url("../../assets/hero-bg-desc.png"),
+			no-repeat 95% 0% url(../../assets/hero-circle.png);
+		background-color: $secondary-bg-color;
+		background-size: 534px, 300px;
+	}
 
-  &__title {
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    text-align: start;
-    margin-bottom: 40px;
+	&__wrap {
+		@include media(tablet) {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+	}
 
-    @include media(tablet) {
-      font-size: 64px;
-    }
-    @include media(desktopSmall) {
-      margin-bottom: 0;
-      font-size: 90px;
-    }
-    @include media(desktopMiddle) {
-      font-size: 130px;
-    }
-  }
+	&__title {
+		z-index: 100;
+		font-weight: 400;
+		font-size: 50px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		text-align: start;
+		margin-bottom: 40px;
+		cursor: default;
 
-  &__br {
-    display: none;
-    @include media(tablet) {
-    }
-    display: block;
-  }
+		@include media(tablet) {
+			font-size: 64px;
+		}
+		@include media(desktopSmall) {
+			margin-bottom: 0;
+			font-size: 90px;
+		}
+		@include media(desktopMiddle) {
+			font-size: 130px;
+		}
+	}
 
-  &__title_bold {
-    font-weight: 800;
-  }
+	&__br {
+		display: none;
+		@include media(tablet) {
+		}
+		display: block;
+	}
 
-  &__btn {
-    display: inline-block;
-    outline: none;
-    border: none;
-    padding: 16px 32px;
+	&__title_bold {
+		font-weight: 800;
+	}
 
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 140%;
+	&__btn {
+		z-index: 10;
+		display: inline-block;
+		outline: none;
+		border: none;
+		padding: 16px 32px;
+		cursor: pointer;
 
-    background-color: $fourth-bg-color;
-    transition: $transition;
+		border-radius: 12px;
+		text-align: center;
+		font-weight: 800;
+		font-size: 16px;
+		line-height: 140%;
 
-    &:hover {
-      box-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3),
-        -1px 1px 2px rgba(190, 182, 167, 0.5),
-        inset -5px -5px 10px rgba(190, 182, 167, 0.2),
-        inset 5px 5px 10px rgba(190, 182, 167, 0.2),
-        inset -5px 5px 10px rgba(255, 255, 255, 0.9),
-        inset 5px -5px 13px rgba(190, 182, 167, 0.9);
-    }
+		background-color: $fourth-bg-color;
+		transition: $transition;
 
-    @include media(tablet) {
-      //   position: absolute;
-      //   right: 264px;
-      //   top: 50%;
-      padding: 32px 64px;
-      border-radius: 16px;
-      font-size: 32px;
-      margin-right: 100px;
-    }
-  }
+		&:hover {
+			box-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3),
+				-1px 1px 2px rgba(190, 182, 167, 0.5),
+				inset -5px -5px 10px rgba(190, 182, 167, 0.2),
+				inset 5px 5px 10px rgba(190, 182, 167, 0.2),
+				inset -5px 5px 10px rgba(255, 255, 255, 0.9),
+				inset 5px -5px 13px rgba(190, 182, 167, 0.9);
+		}
 
-  //   LOOP
+		@include media(desktopMiddle) {
+			padding: 32px 64px;
+			border-radius: 16px;
+			font-size: 32px;
+			margin-right: 100px;
+		}
+	}
 
-  &__loop_wrap {
-    position: absolute;
-    bottom: 10%;
-    transform: rotate(4deg);
+	//   LOOP
 
-    // @include media(desktopSmall) {
-    //   bottom: 10%;
-    // }
-  }
+	&__loop_wrap {
+		z-index: 5;
+		position: absolute;
+		bottom: 10%;
+		transform: rotate(4deg);
 
-  &__loop {
-    background-color: $primary-bg-color;
-    display: flex;
-    padding: 5px;
-    @include media(desktopSmall) {
-      padding: 24px;
-    }
-  }
+		// @include media(desktopSmall) {
+		//   bottom: 10%;
+		// }
+	}
 
-  &__loop_word {
-    position: relative;
-    color: $secondary-text-color;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 29px;
+	&__loop {
+		z-index: 5;
+		background-color: $primary-bg-color;
+		border: none;
+		display: flex;
+		padding: 5px;
+		@include media(desktopMiddle) {
+			padding: 24px;
+		}
+	}
 
-    margin-right: 60px;
+	&__loop_word {
+		z-index: 5;
+		position: relative;
+		color: $secondary-text-color;
+		text-transform: uppercase;
+		font-weight: 800;
+		font-size: 24px;
+		line-height: 29px;
 
-    &::after {
-      content: "";
-      display: inline-block;
-      position: relative;
-      top: -5px;
-      right: -36px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: $secondary-text-color;
-      opacity: 0.2;
-    }
+		margin-right: 60px;
+		cursor: default;
 
-    @include media(desktopSmall) {
-      font-size: 40px;
-      line-height: 48px;
-      margin-right: 76px;
-    }
-  }
+		&::after {
+			content: "";
+			display: inline-block;
+			position: relative;
+			top: -5px;
+			right: -36px;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: $secondary-text-color;
+			opacity: 0.2;
+		}
+
+		@include media(desktopSmall) {
+			font-size: 40px;
+			line-height: 48px;
+			margin-right: 76px;
+		}
+	}
 }
