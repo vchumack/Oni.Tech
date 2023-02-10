@@ -37,9 +37,16 @@ export const Layout = ({ children }) => {
 
 	return (
 		<>
-			<Header active={active} headerRef={headerRef} />
+			<Header
+				active={active}
+				headerRef={headerRef}
+				current={currentSlide === 0 ? 1 : currentSlide}
+			/>
 			<main ref={scrollRef}>{children}</main>
-			<Footer current={currentSlide} footerRef={footerRef} />
+			<Footer
+				current={currentSlide === 0 ? 1 : currentSlide}
+				footerRef={footerRef}
+			/>
 		</>
 	);
 };

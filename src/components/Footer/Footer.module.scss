@@ -16,6 +16,7 @@
 	flex-direction: column;
 
 	gap: 6px;
+	color: inherit;
 
 	@include media(tablet) {
 		gap: 12px;
@@ -25,9 +26,10 @@
 .counter {
 	@include flex(start, center);
 	gap: 4px;
+	color: inherit;
 
 	span {
-		color: $primary-text-color;
+		color: inherit;
 		font-weight: 400;
 		font-style: italic;
 		font-style: 20px;
@@ -46,13 +48,13 @@
 			width: 6px;
 			height: 6px;
 			border-radius: 50%;
-			background-color: $primary-bg-color;
+			background-color: inherit;
 		}
 
 		p {
 			font-style: 16px;
 			font-weight: 500;
-			color: $primary-text-color;
+			color: inherit;
 			letter-spacing: 1.4px;
 		}
 	}
@@ -60,6 +62,6 @@
 	p {
 		font-weight: 300;
 		font-style: 16px;
-		color: $primary-text-color;
+		color: inherit;
 	}
 }

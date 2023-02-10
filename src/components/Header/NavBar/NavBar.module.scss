@@ -13,7 +13,7 @@
 }
 
 .navLink {
-	color: $primary-text-color;
+	color: inherit;
 	font-size: 12px;
 	font-weight: 400;
 	@include media("desktopSmall") {
@@ -22,5 +22,5 @@
 	}
 }
 .active {
-	border-bottom: 1px solid $primary-bg-color;
+	border-bottom: 1px solid inherit;
 }
