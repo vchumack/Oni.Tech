@@ -8,7 +8,7 @@ import { MobileNav } from "./MobileNav/MobileNav";
 import style from "../Header/Header.module.scss";
 import { removeScroll } from "../../functions/removeScroll";
 
-export const Header = ({ active, headerRef }) => {
+export const Header = ({ active, headerRef, current }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
@@ -21,14 +21,27 @@ export const Header = ({ active, headerRef }) => {
 	}, [isOpen]);
 
 	return (
-		<header className={style.header} ref={headerRef}>
+		<header
+			className={style.header}
+			ref={headerRef}
+			style={{
+				color: `${current % 2 === 0 ? "black" : "white"}`,
+			}}
+		>
 			<div className={`container ${style.wrapper}`}>
 				<Logo />
 				{isBigScreen ? (
 					<>
-						<NavBar active={active} />
+						<NavBar current={current} active={active} />
 						<div className={style.contact}>
-							<span className={style.elipse} />
+							<span
+								className={style.elipse}
+								style={{
+									backgroundColor: `${
+										current % 2 === 0 ? "black" : "white"
+									}`,
+								}}
+							/>
 							<a
 								href="#contact"
 								className={
@@ -36,6 +49,13 @@ export const Header = ({ active, headerRef }) => {
 										? `${style.navLink} active`
 										: style.navLink
 								}
+								style={{
+									borderBottom: `${
+										current % 2 === 0
+											? "1px solid black"
+											: "1px solid white"
+									}`,
+								}}
 							>
 								Get in touch
 							</a>

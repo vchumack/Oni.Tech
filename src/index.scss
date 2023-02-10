@@ -137,8 +137,9 @@ section {
 .anchor {
 	width: 0;
 	height: 0;
-	margin-top: 50vh;
+
 	position: absolute;
+	top: 10;
 	pointer-events: none;
 }
 
