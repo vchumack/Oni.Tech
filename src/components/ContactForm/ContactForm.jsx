@@ -1,25 +1,19 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+// import axios from "axios";
 
 import style from "../ContactForm/ContactForm.module.scss";
 
 export const ContactForm = () => {
-	const [isSubmit, setIsSubmit] = useState(false);
-	// const [isLoading, setIsLoading] = useState(false);
-
 	const {
 		register,
-		formState: { errors, isValid },
+		formState: { errors, isValid, isSubmitSuccessful, isSubmitting },
 		handleSubmit,
 		reset,
 	} = useForm({
-		mode: "onBlur",
+		mode: "all",
 	});
 
 	const onSubmit = (data) => {
-		// setIsLoading(true);
-
 		try {
 			// console.log(data);
 			// await axios.post(
@@ -35,33 +29,34 @@ export const ContactForm = () => {
 			//   }
 			// );
 			console.log(data);
-			setIsSubmit(true);
 			reset();
-			// setIsLoading(false);
 		} catch (error) {
 			console.log(error);
-			// setIsLoading(false);
 		}
 	};
 
 	return (
-		<form className={style.form} onSubmit={handleSubmit(onSubmit)}>
+		<form className={style.form}>
 			<div className={style.fieldBox}>
 				<label className={style.label}>
 					<input
+						{...register("name", {
+							required: {
+								value: true,
+								message: "This field is required",
+							},
+							minLength: {
+								value: 3,
+								message:
+									"The minimum number of characters in this field is 3",
+							},
+						})}
 						aria-label="Your name"
 						className={style.input}
 						type="text"
 						name="name"
 						id="name"
 						placeholder="Your name"
-						{...register("name", {
-							required: "This field is required",
-							minLength: {
-								value: 3,
-								message: "Enter at least 3 characters",
-							},
-						})}
 					/>
 				</label>
 				<div className={style.error}>
@@ -76,19 +71,23 @@ export const ContactForm = () => {
 			<div className={style.fieldBox}>
 				<label className={style.label}>
 					<input
+						{...register("method", {
+							required: {
+								value: true,
+								message: "This field is required",
+							},
+							minLength: {
+								value: 2,
+								message:
+									"The minimum number of characters in this field is 2",
+							},
+						})}
 						aria-label="Method of Communication"
 						className={style.input}
 						type="text"
 						name="method"
 						id="method"
 						placeholder="Method of Communication"
-						{...register("method", {
-							required: "This field is required",
-							minLength: {
-								value: 2,
-								message: "Enter at least 2 characters",
-							},
-						})}
 					/>
 				</label>
 
@@ -104,13 +103,13 @@ export const ContactForm = () => {
 			<div className={style.fieldBox}>
 				<label className={`${style.labelComment} ${style.label}`}>
 					<textarea
+						{...register("describe")}
 						aria-label="Describe Idea"
-						className={style.input}
+						className={`${style.input} ${style.textarea}`}
 						type="text"
 						name="describe"
 						id="describe"
 						placeholder="Describe Idea"
-						{...register("describe")}
 					/>
 				</label>
 				<div className={style.error}>
@@ -124,15 +123,16 @@ export const ContactForm = () => {
 			</div>
 			<div className={style.submitBox}>
 				<button
+					onClick={handleSubmit(onSubmit)}
 					id="submit"
-					type="submit"
-					disabled={!isValid}
+					type="button"
+					// disabled={!isValid}
 					className={style.submit}
 				>
 					Contact us
 				</button>
 			</div>
-			{isSubmit && (
+			{isSubmitSuccessful && (
 				<p>
 					Thank you for your application. We will get back to you as
 					soon as possible.
