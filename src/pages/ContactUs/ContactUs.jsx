@@ -8,12 +8,10 @@ export const ContactUs = () => {
 		<section className={style.contactUs}>
 			<div className="anchor" id="contact" />
 			<div className="container">
+				<h2 className={style.title}>LEAVE THE APPLICATION</h2>
 				<div className={style.box}>
 					<div className={style.contactBox}>
 						<div className={style.descriptionBox}>
-							<h2 className={style.title}>
-								LEAVE THE APPLICATION
-							</h2>
 							<p className={style.text}>
 								We will discuss the idea, calculate the
 								benchmark for the cost and development dates of

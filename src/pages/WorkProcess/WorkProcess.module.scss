@@ -1,0 +1,152 @@
+@import "../../shared//styles/variables";
+@import "../../shared/styles/mixins";
+
+
+.title {
+   margin-bottom: 32px;
+
+   font-size: 21px;
+   line-height: 1.2;
+   font-weight: 600;
+
+   color: $primary-text-color;
+
+   @include media('tablet') {
+      font-size: 26px;
+   }
+
+   @include media('desktopSmall') {
+      font-size: 28px;
+      margin-bottom: 70px;
+   }
+
+   @include media('desktopMiddle') {
+      font-size: 40px;
+      margin-bottom: 100px;
+   }
+
+   @include media('desktop') {
+      font-size: 60px;
+   }
+}
+
+.cardsList {
+   position: relative;
+
+
+   @include media('desktopSmall') {
+      @include flex(center);
+      margin-right: -55px;
+      margin-left: -16px;
+      // width: 100%
+   }
+}
+
+.cardsItem {
+   // position: relative;
+
+   // padding: 24px;
+
+   // background: $secondary-bg-color;
+   // background-image: linear-gradient(116.29deg, #87CDD2 -29.94%, rgba(255, 255, 255, 0.26) -29.93%, rgba(135, 205, 210, 0) 101.76%);
+
+   border-radius: 16px;
+   margin-bottom: -55px;
+   // outline: 1px solid red;
+
+
+   @include media('desktopSmall') {
+      width: calc(100% / 3);
+
+      margin-left: -35px;
+   }
+
+   div {
+      background: $secondary-bg-color;
+      background-image: linear-gradient(116.29deg, #87CDD2 -29.94%, rgba(255, 255, 255, 0.26) -29.93%, rgba(135, 205, 210, 0) 101.76%);
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      border-radius: 16px;
+      padding: 24px;
+      padding-bottom: 95px;
+
+
+      @include media('desktopSmall') {
+         padding-bottom: 112px;
+         height: 100%;
+      }
+   }
+
+
+   h3 {
+      margin-bottom: 8px;
+      color: $primary-text-color;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.2;
+
+      @include media('tablet') {
+         font-size: 20px;
+         margin-bottom: 16px;
+      }
+
+      @include media('desktopMiddle') {
+         font-size: 30px;
+         margin-bottom: 24px;
+      }
+
+      @include media('desktop') {
+         font-size: 38px;
+      }
+   }
+
+   p {
+      margin-bottom: 8px;
+   }
+
+   p,
+   li {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.41;
+
+      @include media('tablet') {
+         font-size: 16px;
+      }
+
+      @include media('desktopMiddle') {
+         font-size: 18px;
+      }
+
+      @include media('desktop') {
+         font-size: 20px;
+      }
+   }
+
+   ul {
+      margin-left: 6px;
+      list-style: disc;
+      list-style-position: inside;
+   }
+
+
+}
+
+.cardsItem:last-child div {
+   padding-bottom: 24px;
+
+   @include media('desktopSmall') {
+      padding-bottom: 112px;
+   }
+}
+
+
+.cardsItem:not(:last-child) div {
+
+   @include media('desktopSmall') {
+      padding-right: 70px;
+   }
+
+}
