@@ -179,4 +179,26 @@
 
       }
    }
+
+   .submit:hover,
+   .submit:focus {
+      box-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3), -1px 1px 2px rgba(190, 182, 167, 0.5), inset -5px -5px 10px rgba(190, 182, 167, 0.2), inset 5px 5px 10px rgba(190, 182, 167, 0.2), inset -5px 5px 10px rgba(255, 255, 255, 0.9), inset 5px -5px 13px rgba(190, 182, 167, 0.9);
+   }
+
+   .submit:active {
+      background: $primary-bg-color;
+   }
+}
+
+.successText {
+   margin-top: 16px;
+   padding: 16px 24px;
+
+   background-color: $success-bg-color;
+
+   font-size: 16px;
+   line-height: 1.18;
+   text-align: center;
+
+   border-radius: 16px;
 }

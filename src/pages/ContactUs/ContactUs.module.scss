@@ -78,19 +78,24 @@
 }
 
 .item {
-   @include flex(_, center);
-   gap: 12px;
+
 
    a {
-
+      @include flex(_, center);
+      gap: 12px;
       font-size: 16px;
       line-height: 1.18;
-      text-decoration: underline;
+      // text-decoration: underline;
       color: $primary-text-color;
+
 
       @include media('desktopSmall') {
          font-size: 18px;
          line-height: 1.2;
+      }
+
+      p {
+         border-bottom: 1px solid white;
       }
    }
 
