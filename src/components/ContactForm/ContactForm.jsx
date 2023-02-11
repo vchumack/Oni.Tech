@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useMediaQuery } from "react-responsive";
 // import axios from "axios";
 
 import style from "../ContactForm/ContactForm.module.scss";
@@ -12,6 +13,8 @@ export const ContactForm = () => {
 	} = useForm({
 		mode: "all",
 	});
+	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1100px)" });
+	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
 
 	const onSubmit = (data) => {
 		try {
@@ -70,25 +73,48 @@ export const ContactForm = () => {
 			</div>
 			<div className={style.fieldBox}>
 				<label className={style.label}>
-					<input
-						{...register("method", {
-							required: {
-								value: true,
-								message: "This field is required",
-							},
-							minLength: {
-								value: 2,
-								message:
-									"The minimum number of characters in this field is 2",
-							},
-						})}
-						aria-label="Method of Communication"
-						className={style.input}
-						type="text"
-						name="method"
-						id="method"
-						placeholder="Method of Communication"
-					/>
+					{isTabletOrMobile && (
+						<input
+							{...register("method", {
+								required: {
+									value: true,
+									message: "This field is required",
+								},
+								minLength: {
+									value: 2,
+									message:
+										"The minimum number of characters in this field is 2",
+								},
+							})}
+							aria-label="Method of Communication"
+							className={style.input}
+							type="text"
+							name="method"
+							id="method"
+							placeholder="Method of Communication"
+						/>
+					)}
+					{isBigScreen && (
+						<input
+							{...register("method", {
+								required: {
+									value: true,
+									message: "This field is required",
+								},
+								minLength: {
+									value: 2,
+									message:
+										"The minimum number of characters in this field is 2",
+								},
+							})}
+							aria-label="Method of Communication"
+							className={style.input}
+							type="text"
+							name="method"
+							id="method"
+							placeholder="Convenient Method of Communication"
+						/>
+					)}
 				</label>
 
 				<div className={style.error}>
@@ -122,18 +148,31 @@ export const ContactForm = () => {
 				</div>
 			</div>
 			<div className={style.submitBox}>
-				<button
-					onClick={handleSubmit(onSubmit)}
-					id="submit"
-					type="button"
-					// disabled={!isValid}
-					className={style.submit}
-				>
-					Contact us
-				</button>
+				{isTabletOrMobile && (
+					<button
+						onClick={handleSubmit(onSubmit)}
+						id="submit"
+						type="button"
+						// disabled={!isValid}
+						className={style.submit}
+					>
+						Contact us
+					</button>
+				)}
+				{isBigScreen && (
+					<button
+						onClick={handleSubmit(onSubmit)}
+						id="submit"
+						type="button"
+						// disabled={!isValid}
+						className={style.submit}
+					>
+						Send
+					</button>
+				)}
 			</div>
 			{isSubmitSuccessful && (
-				<p>
+				<p className={style.successText}>
 					Thank you for your application. We will get back to you as
 					soon as possible.
 				</p>

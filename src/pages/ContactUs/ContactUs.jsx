@@ -20,13 +20,20 @@ export const ContactUs = () => {
 						</div>
 						<ul className={style.list}>
 							<li className={style.item}>
-								<Email className={style.svg} />
-
-								<a href="/">info@onitech.com</a>
+								<a href="mailto:info@onitech.com">
+									<Email className={style.svg} />
+									<p>info@onitech.com</p>
+								</a>
 							</li>
 							<li className={style.item}>
-								<Tg className={style.svg} />
-								<a href="/">Write to telegram</a>
+								<a
+									href="https://telegram.me/Oni_tech"
+									target="_blank"
+									rel="noreferrer noopener"
+								>
+									<Tg className={style.svg} />
+									<p>Write to telegram</p>
+								</a>
 							</li>
 						</ul>
 					</div>
