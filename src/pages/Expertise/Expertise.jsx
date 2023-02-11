@@ -1,13 +1,13 @@
 import { useMediaQuery } from "react-responsive";
 import { whyUs } from "../../components/data/whyUs";
+
 import style from "../Expertise/Expertise.module.scss";
 
 export const Expertise = () => {
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
-	const desktop = useMediaQuery({ query: "(min-width: 1920px)" });
+
 	return (
-		<section className={style.section}>
-			<div className="anchor" id="expertise" />
+		<section className={style.section} current="2" id="expertise">
 			<div className="container">
 				{isBigScreen && (
 					<div className={`${style.back} `}>

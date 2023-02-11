@@ -1,9 +1,15 @@
 import style from "./Logo.module.scss";
 
-export const Logo = () => {
+export const Logo = ({ isOdd }) => {
 	return (
 		<div>
-			<span className={style.logo}>ONI.TECH</span>
+			<a
+				href="/"
+				className={style.logo}
+				style={{ color: `${isOdd ? "black" : "white"}` }}
+			>
+				ONI.TECH
+			</a>
 		</div>
 	);
 };

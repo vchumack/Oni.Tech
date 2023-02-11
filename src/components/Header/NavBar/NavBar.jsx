@@ -3,13 +3,14 @@ import { links } from "../../data/header";
 import style from "./NavBar.module.scss";
 
 export const NavBar = ({ active, current }) => {
-	current === 0 ? (current = 1) : current;
+	const isOdd = current % 2 === 0;
+
 	return (
 		<nav className={style.nav}>
 			<ul
 				className={style.navList}
 				style={{
-					color: `${current % 2 === 0 ? "black" : "white"}`,
+					color: `${isOdd ? "black" : "white"}`,
 				}}
 			>
 				{links.map((link) => (
@@ -18,7 +19,9 @@ export const NavBar = ({ active, current }) => {
 							href={link.href}
 							className={
 								active === link.current
-									? `${style.navLink} ${style.active}`
+									? `${style.navLink} ${
+											isOdd ? "activeOdd" : "active"
+									  }`
 									: style.navLink
 							}
 						>
