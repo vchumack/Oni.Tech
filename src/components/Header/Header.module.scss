@@ -1,6 +1,9 @@
 @import "../../shared//styles/variables";
 @import "../../shared/styles/mixins";
 
+.active {
+	border-bottom: 1px solid white;
+}
 .header {
 	position: fixed;
 	background-color: transparent;
