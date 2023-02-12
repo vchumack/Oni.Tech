@@ -8,7 +8,7 @@ export const WorkProcess = () => {
 				<h2 className={style.title}>DEVELOPMENT STEPS</h2>
 				<ul className={style.cardsList}>
 					<li className={style.cardsItem}>
-						<div>
+						<div className={style.box}>
 							<h3>Design and Analytics</h3>
 							<p>
 								Develop the design based on UI/UX product
@@ -19,7 +19,7 @@ export const WorkProcess = () => {
 						</div>
 					</li>
 					<li className={style.cardsItem}>
-						<div>
+						<div className={style.box}>
 							<h3>MVP development</h3>
 							<p>
 								We determine the functionality, the time frame,
@@ -33,7 +33,7 @@ export const WorkProcess = () => {
 						</div>
 					</li>
 					<li className={style.cardsItem}>
-						<div>
+						<div className={style.box}>
 							<h3>Release and maintenance</h3>
 							<p>
 								We assign a special team to work with requests

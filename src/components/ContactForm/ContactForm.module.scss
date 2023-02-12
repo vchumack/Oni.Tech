@@ -119,27 +119,32 @@
 }
 
 .error {
-   position: relative;
 
-   p {
-      position: absolute;
-      top: -1px;
-      left: 10px;
-      font-size: 13px;
+   position: absolute;
+   top: calc(100% - 2px);
+   // top: 100%;
+   left: 10px;
+   font-size: 13px;
 
-      background: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+   background: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
 
-      @include media('tablet') {
-         top: 0;
-         left: 12px;
 
-         font-size: 16px;
-         line-height: 1.18;
-      }
+
+   @include media('tablet') {
+      top: calc(100% + 3px);
+      left: 12px;
+
+      font-size: 16px;
+      line-height: 1.18;
    }
+
+}
+
+.error+.label::before {
+   background: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
 }
 
 .submitBox {

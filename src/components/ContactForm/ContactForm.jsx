@@ -13,7 +13,6 @@ export const ContactForm = () => {
 	} = useForm({
 		mode: "all",
 	});
-	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1100px)" });
 	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
 
 	const onSubmit = (data) => {
@@ -41,6 +40,13 @@ export const ContactForm = () => {
 	return (
 		<form className={style.form}>
 			<div className={style.fieldBox}>
+				{errors?.name && (
+					<p className={style.error}>
+						{errors?.name?.message ||
+							"Oops, something went wrong, try again"}
+					</p>
+				)}
+
 				<label className={style.label}>
 					<input
 						{...register("name", {
@@ -62,74 +68,57 @@ export const ContactForm = () => {
 						placeholder="Your name"
 					/>
 				</label>
-				<div className={style.error}>
-					{errors?.name && (
-						<p>
-							{errors?.name?.message ||
-								"Oops, something went wrong, try again"}
-						</p>
-					)}
-				</div>
 			</div>
 			<div className={style.fieldBox}>
-				<label className={style.label}>
-					{isTabletOrMobile && (
-						<input
-							{...register("method", {
-								required: {
-									value: true,
-									message: "This field is required",
-								},
-								minLength: {
-									value: 2,
-									message:
-										"The minimum number of characters in this field is 2",
-								},
-							})}
-							aria-label="Method of Communication"
-							className={style.input}
-							type="text"
-							name="method"
-							id="method"
-							placeholder="Method of Communication"
-						/>
-					)}
-					{isBigScreen && (
-						<input
-							{...register("method", {
-								required: {
-									value: true,
-									message: "This field is required",
-								},
-								minLength: {
-									value: 2,
-									message:
-										"The minimum number of characters in this field is 2",
-								},
-							})}
-							aria-label="Method of Communication"
-							className={style.input}
-							type="text"
-							name="method"
-							id="method"
-							placeholder="Convenient Method of Communication"
-						/>
-					)}
-				</label>
+				{errors?.method && (
+					<p className={style.error}>
+						{errors?.method?.message ||
+							"Oops, something went wrong, try again"}
+					</p>
+				)}
 
-				<div className={style.error}>
-					{errors?.method && (
-						<p>
-							{errors?.method?.message ||
-								"Oops, something went wrong, try again"}
-						</p>
-					)}
-				</div>
+				<label className={style.label}>
+					<input
+						{...register("method", {
+							required: {
+								value: true,
+								message: "This field is required",
+							},
+							minLength: {
+								value: 2,
+								message:
+									"The minimum number of characters in this field is 2",
+							},
+						})}
+						aria-label="Method of Communication"
+						className={style.input}
+						type="text"
+						name="method"
+						id="method"
+						placeholder={
+							isBigScreen
+								? "Convenient Method of Communication"
+								: "Method of Communication"
+						}
+					/>
+				</label>
 			</div>
 			<div className={style.fieldBox}>
+				{errors?.describe && (
+					<p className={style.error}>
+						{errors?.describe?.message ||
+							"Oops, something went wrong, try again"}
+					</p>
+				)}
+
 				<label className={`${style.labelComment} ${style.label}`}>
 					<textarea
-						{...register("describe")}
+						{...register("describe", {
+							required: {
+								value: true,
+								message: "This field is required",
+							},
+						})}
 						aria-label="Describe Idea"
 						className={`${style.input} ${style.textarea}`}
 						type="text"
@@ -138,38 +127,17 @@ export const ContactForm = () => {
 						placeholder="Describe Idea"
 					/>
 				</label>
-				<div className={style.error}>
-					{errors?.describe && (
-						<p>
-							{errors?.describe?.message ||
-								"Oops, something went wrong, try again"}
-						</p>
-					)}
-				</div>
 			</div>
 			<div className={style.submitBox}>
-				{isTabletOrMobile && (
-					<button
-						onClick={handleSubmit(onSubmit)}
-						id="submit"
-						type="button"
-						// disabled={!isValid}
-						className={style.submit}
-					>
-						Contact us
-					</button>
-				)}
-				{isBigScreen && (
-					<button
-						onClick={handleSubmit(onSubmit)}
-						id="submit"
-						type="button"
-						// disabled={!isValid}
-						className={style.submit}
-					>
-						Send
-					</button>
-				)}
+				<button
+					onClick={handleSubmit(onSubmit)}
+					id="submit"
+					type="button"
+					// disabled={!isValid}
+					className={style.submit}
+				>
+					{isBigScreen ? "Send" : "Contact us"}
+				</button>
 			</div>
 			{isSubmitSuccessful && (
 				<p className={style.successText}>
