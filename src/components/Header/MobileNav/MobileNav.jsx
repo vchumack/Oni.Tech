@@ -1,8 +1,9 @@
 import { links } from "../../data/header";
+import { ReactComponent as BurgerCross } from "../../../assets//svg/burgerCross.svg";
 
 import style from "./MobileNav.module.scss";
 
-export const MobileNav = ({ isOpen, toggleBurger, active }) => {
+export const MobileNav = ({ isOpen, toggleBurger, active, isOdd }) => {
 	return (
 		<>
 			<div className={isOpen ? style.overlayOpen : style.overlayClosed} />
@@ -10,9 +11,9 @@ export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 				className={`${style.nav} ${isOpen ? style.open : style.close}`}
 			>
 				{isOpen && (
-					<span className={style.closeBurger} onClick={toggleBurger}>
-						X
-					</span>
+					<div className={style.closeBurger} onClick={toggleBurger}>
+						<BurgerCross width={24} hegiht={24} fill={"white"} />
+					</div>
 				)}
 				<ul className={style.navList}>
 					{links.map((link) => (

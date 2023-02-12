@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
+import { removeScroll } from "../../shared/functions/removeScroll";
 import { Logo } from "../Logo/Logo";
 import { NavBar } from "./NavBar/NavBar";
 import { MobileNav } from "./MobileNav/MobileNav";
+import { ReactComponent as BurgerLines } from "../../assets/svg/burgerLines.svg";
 
 import style from "../Header/Header.module.scss";
-import { removeScroll } from "../../functions/removeScroll";
 
 export const Header = ({ active, headerRef, current }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
+	const isOdd = current % 2 === 0;
 
 	const toggleBurger = () => {
 		setIsOpen(!isOpen);
@@ -25,11 +27,11 @@ export const Header = ({ active, headerRef, current }) => {
 			className={style.header}
 			ref={headerRef}
 			style={{
-				color: `${current % 2 === 0 ? "black" : "white"}`,
+				color: `${isOdd ? "black" : "white"}`,
 			}}
 		>
 			<div className={`container ${style.wrapper}`}>
-				<Logo />
+				<Logo isOdd={isOdd} />
 				{isBigScreen ? (
 					<>
 						<NavBar current={current} active={active} />
@@ -38,7 +40,7 @@ export const Header = ({ active, headerRef, current }) => {
 								className={style.elipse}
 								style={{
 									backgroundColor: `${
-										current % 2 === 0 ? "black" : "white"
+										isOdd ? "black" : "white"
 									}`,
 								}}
 							/>
@@ -51,7 +53,7 @@ export const Header = ({ active, headerRef, current }) => {
 								}
 								style={{
 									borderBottom: `${
-										current % 2 === 0
+										isOdd
 											? "1px solid black"
 											: "1px solid white"
 									}`,
@@ -71,11 +73,16 @@ export const Header = ({ active, headerRef, current }) => {
 								onClick={toggleBurger}
 								className={style.burgerIcon}
 							>
-								=
+								<BurgerLines
+									width={33}
+									height={33}
+									fill={isOdd ? "black" : "white"}
+								/>
 							</span>
 						)}
 						<MobileNav
 							isOpen={isOpen}
+							isOdd={isOdd}
 							toggleBurger={toggleBurger}
 							active={active}
 						/>

@@ -131,7 +131,10 @@ section {
 }
 
 .active {
-	border-bottom: 1px solid $primary-bg-color;
+	border-bottom: 1px solid white;
+}
+.activeOdd {
+	border-bottom: 1px solid black;
 }
 
 .anchor {
@@ -143,8 +146,6 @@ section {
 	pointer-events: none;
 }
 
-
 :-webkit-autofill {
 	transition: all 5000s ease-in-out 0s;
-
 }

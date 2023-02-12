@@ -1,29 +1,23 @@
 import { useEffect, useState, useRef } from "react";
 
-import useScrollSnap from "react-use-scroll-snap";
-
-import { hideElements } from "../../functions/hideElementsOnScroll";
-import { activateNavLink } from "../../functions/activateNavLink";
+import { hideElements } from "../../shared/functions/hideElementsOnScroll";
+import { activateNavLink } from "../../shared/functions/activateNavLink";
+import { getCurrentSection } from "../../shared/functions/getCurrentSection";
 
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 
 export const Layout = ({ children }) => {
-	const scrollRef = useRef(null);
 	const headerRef = useRef(null);
 	const footerRef = useRef(null);
-
+	
 	const [active, setActive] = useState("home");
-	const currentSlide = useScrollSnap({
-		ref: scrollRef,
-		duration: 1,
-		delay: 0,
-	});
+	const [currentSection, setCurrentSection] = useState("1");
 
 	const handleScroll = () => {
-		const sections = document.querySelectorAll(".anchor");
-
+		const sections = document.querySelectorAll("section");
 		hideElements(headerRef, footerRef);
+		getCurrentSection(sections, setCurrentSection);
 		activateNavLink(sections, active, setActive);
 	};
 
@@ -40,13 +34,10 @@ export const Layout = ({ children }) => {
 			<Header
 				active={active}
 				headerRef={headerRef}
-				current={currentSlide === 0 ? 1 : currentSlide}
+				current={currentSection}
 			/>
-			<main ref={scrollRef}>{children}</main>
-			<Footer
-				current={currentSlide === 0 ? 1 : currentSlide}
-				footerRef={footerRef}
-			/>
+			<main>{children}</main>
+			<Footer current={currentSection} footerRef={footerRef} />
 		</>
 	);
 };
