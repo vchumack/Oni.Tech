@@ -3,10 +3,8 @@
 
 .form {
 
-
    @include media('desktopSmall') {
       width: 50%;
-
    }
 }
 
@@ -22,13 +20,12 @@
 .label {
    position: relative;
 
-   display: flex;
-   align-items: center;
-   background: #000000;
-   background-image: linear-gradient(116.29deg,
-         #87cdd2 -29.94%,
-         rgba(255, 255, 255, 0.26) -29.93%,
-         rgba(135, 205, 210, 0) 101.76%);
+   @include flex(_, center);
+   // display: flex;
+   // align-items: center;
+
+   background: $secondary-bg-color;
+   background-image: $linear-bg-color;
 
    background-clip: padding-box;
    border: solid 1.5px transparent;
@@ -46,33 +43,28 @@
    z-index: -1;
    margin: -1.5px;
    border-radius: 16px;
-   background: linear-gradient(176deg,
-         #87cdd2 -13.38%,
-         rgba(255, 255, 255, 0) 101%);
+   background: $linear-border-color;
+
+   transition: $transition;
 }
 
 .input {
-   display: flex;
-   padding: 16px;
-   background: transparent;
-   outline: none;
    position: relative;
    width: 100%;
-   font-family: inherit;
 
+   display: flex;
+   padding: 16px;
+
+   background: transparent;
+   outline: none;
    border: none;
+
+   font-family: inherit;
    font-weight: 400;
    font-size: 16px;
    line-height: 19px;
    color: white;
-   font-weight: 400;
 
-
-   // @include media('tablet') {
-   //    padding: 24px;
-   //    font-size: 24px;
-   //    line-height: 29px;
-   // }
 
    @include media('desktopSmall') {
       padding: 24px;
@@ -83,7 +75,7 @@
 
    &::placeholder {
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.5);
+      color: $third-text-color;
       font-size: 16px;
       line-height: 19px;
 
@@ -97,7 +89,7 @@
 }
 
 .label:focus-within::before {
-   background: linear-gradient(121deg, #fef7e9 -13.38%, #fef7e9 91.48%);
+   background: $linear-focus-border-color;
 }
 
 .textarea {
@@ -105,13 +97,13 @@
 }
 
 .textarea::-webkit-scrollbar-track {
-   background: #2e2e2c;
+   background: $scrollbar-color;
    border-radius: 10px;
 }
 
 .textarea::-webkit-scrollbar-thumb {
    border-radius: 10px;
-   background-color: #04867586;
+   background-color: $secondary-scrollbar-color;
 }
 
 .textarea::-webkit-scrollbar {
@@ -122,15 +114,14 @@
 
    position: absolute;
    top: calc(100% - 2px);
-   // top: 100%;
    left: 10px;
+
    font-size: 13px;
 
-   background: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
+   background: $linear-error-color;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    background-clip: text;
-
 
 
    @include media('tablet') {
@@ -144,7 +135,7 @@
 }
 
 .error+.label::before {
-   background: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
+   background: $linear-error-color;
 }
 
 .submitBox {
@@ -165,6 +156,8 @@
       line-height: 1.41;
 
       border-radius: 12px;
+
+      transition: $transition;
 
       @include media('desktopSmall') {
          padding-top: 21px;
