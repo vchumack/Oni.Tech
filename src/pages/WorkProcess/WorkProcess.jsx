@@ -2,7 +2,7 @@ import style from "../WorkProcess/WorkProcess.module.scss";
 
 export const WorkProcess = () => {
 	return (
-		<section id="process" current="3">
+		// <section id="process" current="3">
 			<div className="container">
 				<h2 className={style.title}>DEVELOPMENT STEPS</h2>
 				<ul className={style.cardsList}>
@@ -50,6 +50,6 @@ export const WorkProcess = () => {
 					</li>
 				</ul>
 			</div>
-		</section>
+		// </section>
 	);
 };

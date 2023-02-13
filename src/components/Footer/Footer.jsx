@@ -6,12 +6,12 @@ export const Footer = ({ current, footerRef }) => {
 			className={style.footer}
 			ref={footerRef}
 			style={{
-				color: `${current % 2 === 0 ? "black" : "white"}`,
+				color: `${current % 2 !== 0 ? "black" : "white"}`,
 			}}
 		>
 			<div className={`container ${style.wrapper}`}>
 				<div className={style.counter}>
-					<span>0{current === 0 ? 1 : current}</span>
+					<span>0{current + 1}</span>
 					<span>/</span>
 					<span>05</span>
 				</div>
@@ -20,7 +20,7 @@ export const Footer = ({ current, footerRef }) => {
 						<span
 							style={{
 								backgroundColor: `${
-									current % 2 === 0 ? "black" : "white"
+									current % 2 !== 0 ? "black" : "white"
 								}`,
 							}}
 						/>

@@ -3,7 +3,7 @@ import { links } from "../../data/header";
 import style from "./NavBar.module.scss";
 
 export const NavBar = ({ active, current }) => {
-	const isOdd = current % 2 === 0;
+	const isOdd = current % 2 !== 0;
 
 	return (
 		<nav className={style.nav}>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-
 import { removeScroll } from "../../shared/functions/removeScroll";
+
 import { Logo } from "../Logo/Logo";
 import { NavBar } from "./NavBar/NavBar";
 import { MobileNav } from "./MobileNav/MobileNav";
@@ -13,7 +13,7 @@ export const Header = ({ active, headerRef, current }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
-	const isOdd = current % 2 === 0;
+	const isOdd = current % 2 !== 0;
 
 	const toggleBurger = () => {
 		setIsOpen(!isOpen);
@@ -82,7 +82,6 @@ export const Header = ({ active, headerRef, current }) => {
 						)}
 						<MobileNav
 							isOpen={isOpen}
-							isOdd={isOdd}
 							toggleBurger={toggleBurger}
 							active={active}
 						/>
