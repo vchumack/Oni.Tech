@@ -59,6 +59,7 @@ a:not([class]) {
 a {
 	text-decoration: none;
 }
+
 /* Simplify work with images */
 img {
 	max-width: 100%;
@@ -88,9 +89,14 @@ select {
 section {
 	padding: 150px 0 77px 0;
 	height: 100vh;
+
 	@media screen and (min-height: 300px) {
 		padding: 70px 0 70px 0;
 	}
+}
+
+main {
+	height: 100vh;
 }
 
 /* Applying styles to buttons */
@@ -110,9 +116,14 @@ body {
 	line-height: 1.5;
 }
 
+section {
+	padding-top: 184px;
+}
+
 .container {
 	margin: 0 auto;
 	padding: 0 16px;
+
 	@media (min-width: 768px) {
 		// max-width: 1200px;
 		padding: 0 80px;
@@ -120,5 +131,21 @@ body {
 }
 
 .active {
-	border-bottom: 1px solid $primary-bg-color;
+	border-bottom: 1px solid white;
+}
+.activeOdd {
+	border-bottom: 1px solid black;
+}
+
+.anchor {
+	width: 0;
+	height: 0;
+
+	position: absolute;
+	top: 10;
+	pointer-events: none;
+}
+
+:-webkit-autofill {
+	transition: all 5000s ease-in-out 0s;
 }

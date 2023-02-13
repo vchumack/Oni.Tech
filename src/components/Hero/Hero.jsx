@@ -19,7 +19,7 @@ const MARQUE_ITEMS = [
 
 export const Hero = () => {
 	return (
-		<section className={style.hero} id="home">
+		<section className={style.hero} current="1" id="home">
 			<div className="container">
 				<div className={style.hero__wrap}>
 					<h1 className={style.hero__title}>

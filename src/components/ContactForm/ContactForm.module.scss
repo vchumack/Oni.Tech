@@ -2,107 +2,140 @@
 @import "../../shared/styles/mixins";
 
 .form {
-   // width: 100%;
-
-   // height: 200px;
-   // background-color: #60abc9;
 
    @include media('desktopSmall') {
       width: 50%;
-
    }
 }
 
 .fieldBox {
    position: relative;
-   margin-bottom: 12px;
+   margin-bottom: 18px;
 
    @include media('tablet') {
       margin-bottom: 32px;
    }
+}
 
-   .input {
-      width: 100%;
-      padding: 16px;
+.label {
+   position: relative;
 
-      @include media('tablet') {
-         padding: 24px;
-      }
+   @include flex(_, center);
+   // display: flex;
+   // align-items: center;
 
+   background: $secondary-bg-color;
+   background-image: $linear-bg-color;
+
+   background-clip: padding-box;
+   border: solid 1.5px transparent;
+   border-radius: 16px;
+   outline: none;
+}
+
+.label::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: -1;
+   margin: -1.5px;
+   border-radius: 16px;
+   background: $linear-border-color;
+
+   transition: $transition;
+}
+
+.input {
+   position: relative;
+   width: 100%;
+
+   display: flex;
+   padding: 16px;
+
+   background: transparent;
+   outline: none;
+   border: none;
+
+   font-family: inherit;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 19px;
+   color: white;
+
+
+   @include media('desktopSmall') {
+      padding: 24px;
       font-size: 24px;
-      line-height: 1.2;
-      color: white;
-
-      background-color: transparent;
-      background-color: linear-gradient(116.29deg, #87CDD2 -29.94%, rgba(255, 255, 255, 0.26) -29.93%, rgba(135, 205, 210, 0) 101.76%);
-      backdrop-filter: blur(50px);
-      border-radius: 12px;
-      border: 1px solid linear-gradient(121deg, #87CDD2 -13.38%, rgba(255, 255, 255, 0) 91.48%);
-      ;
-
-      outline: none;
-
+      line-height: 29px;
    }
 
-   // input:focus+.label,
-   // input:not(:placeholder-shown)+.label {
-   //    transform: translateY(-50px);
 
-   //    font-size: 14px;
-
-   // }
-
-   .label {
-      // background-color: linear-gradient(116.29deg, #87CDD2 -29.94%, rgba(255, 255, 255, 0.26) -29.93%, rgba(135, 205, 210, 0) 101.76%);
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: $transition;
-
-      font-size: 24px;
-      line-height: 1.2;
-      color: rgba(255, 255, 255, 0.5);
-
-      @include media('tablet') {
-         left: 26px;
-      }
-
-   }
-
-   .labelComment {
-
-      top: 41px;
-
-   }
-
-   .error {
-      position: relative;
-
-      p {
-         position: absolute;
-         top: -1px;
-         left: 10px;
-         // transform: translateX(-50%);
-         font-size: 10px;
+   &::placeholder {
+      font-weight: 400;
+      color: $third-text-color;
+      font-size: 16px;
+      line-height: 19px;
 
 
-         background: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
-         background-clip: text;
-         // text-fill-color: transparent;
-
-
-         @include media('tablet') {
-            top: 0;
-            left: 12px;
-
-            font-size: 16px;
-            line-height: 1.18;
-         }
+      @include media('desktopSmall') {
+         font-size: 24px;
       }
    }
+
+
+}
+
+.label:focus-within::before {
+   background: $linear-focus-border-color;
+}
+
+.textarea {
+   min-height: 135px;
+}
+
+.textarea::-webkit-scrollbar-track {
+   background: $scrollbar-color;
+   border-radius: 10px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background-color: $secondary-scrollbar-color;
+}
+
+.textarea::-webkit-scrollbar {
+   width: 10px;
+}
+
+.error {
+
+   position: absolute;
+   top: calc(100% - 2px);
+   left: 10px;
+
+   font-size: 13px;
+
+   background: $linear-error-color;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+
+
+   @include media('tablet') {
+      top: calc(100% + 3px);
+      left: 12px;
+
+      font-size: 16px;
+      line-height: 1.18;
+   }
+
+}
+
+.error+.label::before {
+   background: $linear-error-color;
 }
 
 .submitBox {
@@ -124,6 +157,8 @@
 
       border-radius: 12px;
 
+      transition: $transition;
+
       @include media('desktopSmall') {
          padding-top: 21px;
          padding-bottom: 21px;
@@ -142,4 +177,26 @@
 
       }
    }
+
+   .submit:hover,
+   .submit:focus {
+      box-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3), -1px 1px 2px rgba(190, 182, 167, 0.5), inset -5px -5px 10px rgba(190, 182, 167, 0.2), inset 5px 5px 10px rgba(190, 182, 167, 0.2), inset -5px 5px 10px rgba(255, 255, 255, 0.9), inset 5px -5px 13px rgba(190, 182, 167, 0.9);
+   }
+
+   .submit:active {
+      background: $primary-bg-color;
+   }
+}
+
+.successText {
+   margin-top: 16px;
+   padding: 16px 24px;
+
+   background-color: $success-bg-color;
+
+   font-size: 16px;
+   line-height: 1.18;
+   text-align: center;
+
+   border-radius: 16px;
 }

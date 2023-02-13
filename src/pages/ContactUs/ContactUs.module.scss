@@ -2,13 +2,12 @@
 @import "../../shared/styles/mixins";
 
 .contactUs {
-   background-color: $secondary-bg-color;
    color: $primary-text-color;
 }
 
 .box {
    @include media('desktopSmall') {
-      display: flex;
+      @include flex();
    }
 
 }
@@ -30,18 +29,19 @@
 
 .title {
    font-size: 21px;
+   font-weight: 600;
+   line-height: 25px;
+   text-transform: uppercase;
    margin-bottom: 12px;
 
    @include media('tablet') {
       font-size: 26px;
+      margin-bottom: 15px;
    }
-
-   // @include media('desktopSmall') {
-   //    font-size: 28px;
-   // }
 
    @include media('desktopMiddle') {
       font-size: 40px;
+      margin-bottom: 50px;
    }
 
    @include media('desktop') {
@@ -50,18 +50,20 @@
 }
 
 .text {
-   font-weight: 400;
-   line-height: 1.21;
-   opacity: 0.7;
    margin-bottom: 24px;
 
    font-size: 14px;
+   font-weight: 400;
+   line-height: 1.21;
+   opacity: 0.7;
+   color: $primary-text-color;
 
    @include media('tablet') {
       font-size: 16px;
    }
 
    @include media('desktopSmall') {
+      margin-bottom: 65px;
       font-size: 24px;
    }
 }
@@ -76,20 +78,24 @@
 }
 
 .item {
-   @include flex(_, center);
-   gap: 12px;
 
 
    a {
+      @include flex(_, center);
+      gap: 12px;
 
       font-size: 16px;
       line-height: 1.18;
-      text-decoration: underline;
       color: $primary-text-color;
+
 
       @include media('desktopSmall') {
          font-size: 18px;
          line-height: 1.2;
+      }
+
+      p {
+         border-bottom: 1px solid $primary-bg-color;
       }
    }
 

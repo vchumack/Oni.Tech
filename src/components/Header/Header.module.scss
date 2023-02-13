@@ -1,6 +1,9 @@
 @import "../../shared//styles/variables";
 @import "../../shared/styles/mixins";
 
+.active {
+	border-bottom: 1px solid white;
+}
 .header {
 	position: fixed;
 	background-color: transparent;
@@ -8,12 +11,26 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	color: $primary-text-color;
 	padding: 16px 0px 40px;
+
+	transition: all 500ms ease-in-out;
+
+	@include media(desktopSmall) {
+		padding: 32px 0px 40px;
+	}
+
+	@include media(desktopMiddle) {
+		padding: 18px 0px 40px;
+	}
+
+	@include media(desktop) {
+		padding: 48px;
+	}
 }
 
 .wrapper {
 	@include flex(space-between, center);
+	color: inherit;
 }
 
 .burgerIcon {
@@ -22,10 +39,9 @@
 }
 
 .navLink {
-	color: $primary-text-color;
+	color: inherit;
 	font-size: 12px;
 	font-weight: 400;
-	border-bottom: 1px solid $primary-bg-color;
 	@include media("desktopSmall") {
 		font-size: 16px;
 		font-weight: 500;
@@ -35,11 +51,11 @@
 .contact {
 	@include flex(center, center);
 	gap: 12px;
+	color: inherit;
 }
 
 .elipse {
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
-	background-color: $primary-bg-color;
 }

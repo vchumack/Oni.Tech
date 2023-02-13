@@ -5,14 +5,12 @@ import style from "../ContactUs/ContactUs.module.scss";
 
 export const ContactUs = () => {
 	return (
-		<section id="contact" className={style.contactUs}>
+		<section className={style.contactUs} id="contact" current="5">
 			<div className="container">
+				<h2 className={style.title}>LEAVE THE APPLICATION</h2>
 				<div className={style.box}>
 					<div className={style.contactBox}>
 						<div className={style.descriptionBox}>
-							<h2 className={style.title}>
-								LEAVE THE APPLICATION
-							</h2>
 							<p className={style.text}>
 								We will discuss the idea, calculate the
 								benchmark for the cost and development dates of
@@ -21,13 +19,20 @@ export const ContactUs = () => {
 						</div>
 						<ul className={style.list}>
 							<li className={style.item}>
-								<Email className={style.svg} />
-
-								<a href="/">info@onitech.com</a>
+								<a href="mailto:info@onitech.com">
+									<Email className={style.svg} />
+									<p>info@onitech.com</p>
+								</a>
 							</li>
 							<li className={style.item}>
-								<Tg className={style.svg} />
-								<a href="/">Write to telegram</a>
+								<a
+									href="https://telegram.me/Oni_tech"
+									target="_blank"
+									rel="noreferrer noopener"
+								>
+									<Tg className={style.svg} />
+									<p>Write to telegram</p>
+								</a>
 							</li>
 						</ul>
 					</div>
