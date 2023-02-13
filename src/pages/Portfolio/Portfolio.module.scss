@@ -1,2 +1,22 @@
 @import "../../shared//styles/variables";
 @import "../../shared/styles/mixins";
+
+.portfolio {
+	background-color: $third-bg-color;
+	&__title {
+		font-weight: 600;
+		font-size: 21px;
+		line-height: 0.8;
+		text-transform: uppercase;
+
+		margin-bottom: 32px;
+
+		color: $secondary-text-color;
+
+		@include media(desktopMiddle) {
+			font-weight: 400;
+			font-size: 60px;
+			margin-bottom: 40px;
+		}
+	}
+}
