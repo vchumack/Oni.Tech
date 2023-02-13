@@ -8,13 +8,35 @@ $desktop: 1920px;
 
 $fontFamilyBase: "Lato", sans-serif;
 
-$transition: 0.4s all ease-in-out;
+$transition: 0.3s all ease-in-out;
 
 $primary-text-color: #ffffff;
 $secondary-text-color: #000000;
+$third-text-color: rgba(255, 255, 255, 0.5);
+$fourth-text-color: rgba(255, 255, 255, 0.7);
 
 $primary-bg-color: #ffffff;
 $secondary-bg-color: #000000;
 $third-bg-color: #f5e9d6;
 $fourth-bg-color: #f4e9d6;
 $success-bg-color: rgba(189, 255, 0, 0.17);
+
+$scrollbar-color: #2e2e2c;
+$secondary-scrollbar-color: #04867586;
+
+$linear-bg-color: linear-gradient(116.29deg,
+      #87cdd2 -29.94%,
+      rgba(255, 255, 255, 0.26) -29.93%,
+      rgba(135, 205, 210, 0) 101.76%);
+
+$linear-border-color: linear-gradient(165deg,
+      #87cdd2 -13.38%,
+      rgba(255, 255, 255, 0) 90%);
+
+$linear-second-border-color: linear-gradient(108deg,
+      #87cdd2 -13.38%,
+      rgba(255, 255, 255, 0) 101%);
+
+$linear-focus-border-color: linear-gradient(121deg, #fef7e9 -13.38%, #fef7e9 91.48%);
+
+$linear-error-color: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
