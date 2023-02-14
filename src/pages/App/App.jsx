@@ -36,7 +36,7 @@ function App() {
 				onLeave={onLeave}
 				afterLoad={afterLoad}
 				anchors={["home", "expertise", "process", "portfolio", "contact"]}
-				menu={true}
+// 				menu={true}
 				render={() => {
 					return (
 						<>
