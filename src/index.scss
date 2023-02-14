@@ -122,7 +122,7 @@ body {
 	padding: 0 16px;
 
 	@media (min-width: 768px) {
-		// max-width: 1200px;
+		max-width: 1920px;
 		padding: 0 80px;
 	}
 }
@@ -130,6 +130,7 @@ body {
 .active {
 	border-bottom: 1px solid white;
 }
+
 .activeOdd {
 	border-bottom: 1px solid black;
 }
