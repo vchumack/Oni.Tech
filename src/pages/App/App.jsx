@@ -35,8 +35,8 @@ function App() {
 				licenseKey={"YOUR_KEY_HERE"}
 				onLeave={onLeave}
 				afterLoad={afterLoad}
-				anchors={["home", "expertise", "process", "portfolio", "contact"]}
-// 				menu={true}
+				anchors={anchors}
+				menu={"#navbar"}
 				render={() => {
 					return (
 						<>

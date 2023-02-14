@@ -6,7 +6,7 @@ export const NavBar = ({ active, current }) => {
 	const isOdd = current % 2 !== 0;
 
 	return (
-		<nav className={style.nav}>
+		<nav className={style.nav} id="navbar">
 			<ul
 				className={style.navList}
 				style={{
@@ -14,7 +14,11 @@ export const NavBar = ({ active, current }) => {
 				}}
 			>
 				{links.map((link) => (
-					<li className={style.navItem} key={link.key}>
+					<li
+						className={style.navItem}
+						key={link.key}
+						data-menuanchor={link.current}
+					>
 						<a
 							href={link.href}
 							className={
