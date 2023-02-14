@@ -5,7 +5,7 @@ import style from "../ContactUs/ContactUs.module.scss";
 
 export const ContactUs = () => {
 	return (
-		<section className={style.contactUs} id="contact" current="5">
+		// <section className={style.contactUs} id="contact" current="5">
 			<div className="container">
 				<h2 className={style.title}>LEAVE THE APPLICATION</h2>
 				<div className={style.box}>
@@ -39,6 +39,6 @@ export const ContactUs = () => {
 					<ContactForm />
 				</div>
 			</div>
-		</section>
+		// </section>
 	);
 };

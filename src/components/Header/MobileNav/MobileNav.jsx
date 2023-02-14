@@ -3,7 +3,7 @@ import { ReactComponent as BurgerCross } from "../../../assets//svg/burgerCross.
 
 import style from "./MobileNav.module.scss";
 
-export const MobileNav = ({ isOpen, toggleBurger, active, isOdd }) => {
+export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 	return (
 		<>
 			<div className={isOpen ? style.overlayOpen : style.overlayClosed} />
