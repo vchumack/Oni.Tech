@@ -41,28 +41,19 @@ function App() {
 					return (
 						<>
 							<ReactFullpage.Wrapper>
-								<section className="section hero" data-anchor>
+								<section className="section hero">
 									<Home />
 								</section>
-								<section
-									className="section expertise"
-									data-anchor
-								>
+								<section className="section expertise">
 									<Expertise />
 								</section>
-								<section className="section" data-anchor>
+								<section className="section">
 									<WorkProcess />
 								</section>
-								<section
-									className="section portfolio"
-									data-anchor
-								>
+								<section className="section portfolio">
 									<Portfolio />
 								</section>
-								<section
-									className="section contactUs"
-									data-anchor
-								>
+								<section className="section contactUs">
 									<ContactUs />
 								</section>
 							</ReactFullpage.Wrapper>
