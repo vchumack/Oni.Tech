@@ -15,9 +15,13 @@ export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 						<BurgerCross width={24} hegiht={24} fill={"white"} />
 					</div>
 				)}
-				<ul className={style.navList}>
+				<ul className={style.navList} id="navbar">
 					{links.map((link) => (
-						<li className={style.navItem} key={link.key}>
+						<li
+							className={style.navItem}
+							key={link.key}
+							data-menuanchor={link.current}
+						>
 							<a
 								href={link.href}
 								className={
@@ -32,7 +36,7 @@ export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 						</li>
 					))}
 
-					<li className={style.navItem}>
+					<li className={style.navItem} data-menuanchor="contact">
 						<a
 							href="#contact"
 							className={

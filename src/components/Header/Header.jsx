@@ -46,6 +46,7 @@ export const Header = ({ active, headerRef, current }) => {
 							/>
 							<a
 								href="#contact"
+								data-menuanchor="contact"
 								className={
 									active === "contact"
 										? `${style.navLink} active`
