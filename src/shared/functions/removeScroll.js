@@ -1,5 +1,5 @@
 // call inide useEffect
 
 export const removeScroll = (shouldRemove) => {
-	document.body.style.overflow = shouldRemove ? "hidden" : "scroll";
+	document.body.style.overflow = shouldRemove ? "hidden" : "visible";
 };
