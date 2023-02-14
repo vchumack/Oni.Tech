@@ -1,5 +1,5 @@
 import style from "../PortfolioList/PortfolioList.module.scss";
-
+import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { PortfolioItem } from "./PortfolioItem/PortfolioItem";
 
@@ -58,135 +58,51 @@ const EXPERTISE = [
 ];
 
 export const PortfolioList = () => {
-	const [openCardId, setOpenCardId] = useState(1);
+	const [open, setOpen] = useState(0);
+	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
 
 	return (
-		<div className={style.list}>
-			<PortfolioItem
-				id={1}
-				title={EXPERTISE[0].title}
-				type={EXPERTISE[0].type}
-				img={EXPERTISE[0].img}
-				isOpen={openCardId}
-				setOpen={setOpenCardId}
-			>
-				<div className={style.list__item}>
-					<img
-						className={style.list__img}
-						src={EXPERTISE[0].img}
-						alt={EXPERTISE[0].title}
+		<ul className={style.list}>
+			{EXPERTISE.map((expertise, index) => (
+				<li
+					key={index}
+					className={style.list__item}
+					style={
+						isBigScreen
+							? {
+									transform: `translateX(-${index * 1.9}rem)`,
+									zIndex: EXPERTISE.length - index,
+									// {open === index ? flexBasis:"49%":flexBasis:"9.5%"},
+									// ":firstOfType": {
+									// 	left: 0,
+									// 	flexBasis:
+									// 		open === index ? "49%" : "9.5%",
+									// },
+									flex:
+										open === index
+											? "1 0 49%"
+											: "1 0 10.2%",
+							  }
+							: {
+									zIndex: EXPERTISE.length - index,
+									transform: `translateX(0)`,
+									transform: `translateY(-${index * 1.5}rem)`,
+									flex:
+										open === index
+											? "1 0 45%"
+											: "1 0 11.5%",
+							  }
+					}
+				>
+					<PortfolioItem
+						isBigScreen={isBigScreen}
+						index={index}
+						setOpen={setOpen}
+						isOpen={open === index}
+						expertise={expertise}
 					/>
-					<div className={style.list__text_wrap}>
-						<p className={style.list__title}>
-							{EXPERTISE[0].title}
-						</p>
-						<p className={style.list__desc}>
-							{EXPERTISE[0].description}
-						</p>
-						<p className={style.list__type}>{EXPERTISE[0].type}</p>
-					</div>
-				</div>
-			</PortfolioItem>
-			<PortfolioItem
-				id={2}
-				title={EXPERTISE[1].title}
-				type={EXPERTISE[1].type}
-				img={EXPERTISE[1].img}
-				isOpen={openCardId}
-				setOpen={setOpenCardId}
-			>
-				<div className={style.list__item}>
-					<img
-						className={style.list__img}
-						src={EXPERTISE[1].img}
-						alt={EXPERTISE[1].title}
-					/>
-					<div className={style.list__text_wrap}>
-						<p className={style.list__title}>
-							{EXPERTISE[1].title}
-						</p>
-						<p className={style.list__desc}>
-							{EXPERTISE[1].description}
-						</p>
-						<p className={style.list__type}>{EXPERTISE[1].type}</p>
-					</div>
-				</div>
-			</PortfolioItem>
-			<PortfolioItem
-				id={3}
-				title={EXPERTISE[2].title}
-				type={EXPERTISE[2].type}
-				img={EXPERTISE[2].img}
-				isOpen={openCardId}
-				setOpen={setOpenCardId}
-			>
-				<div className={style.list__item}>
-					<img
-						className={style.list__img}
-						src={EXPERTISE[2].img}
-						alt={EXPERTISE[2].title}
-					/>
-					<div className={style.list__text_wrap}>
-						<p className={style.list__title}>
-							{EXPERTISE[2].title}
-						</p>
-						<p className={style.list__desc}>
-							{EXPERTISE[2].description}
-						</p>
-						<p className={style.list__type}>{EXPERTISE[2].type}</p>
-					</div>
-				</div>
-			</PortfolioItem>
-			<PortfolioItem
-				id={4}
-				title={EXPERTISE[3].title}
-				type={EXPERTISE[3].type}
-				img={EXPERTISE[3].img}
-				isOpen={openCardId}
-				setOpen={setOpenCardId}
-			>
-				<div className={style.list__item}>
-					<img
-						className={style.list__img}
-						src={EXPERTISE[3].img}
-						alt={EXPERTISE[3].title}
-					/>
-					<div className={style.list__text_wrap}>
-						<p className={style.list__title}>
-							{EXPERTISE[3].title}
-						</p>
-						<p className={style.list__desc}>
-							{EXPERTISE[3].description}
-						</p>
-						<p className={style.list__type}>{EXPERTISE[3].type}</p>
-					</div>
-				</div>
-			</PortfolioItem>
-			<PortfolioItem
-				id={5}
-				title={EXPERTISE[4].title}
-				type={EXPERTISE[4].type}
-				img={EXPERTISE[4].img}
-				isOpen={openCardId}
-				setOpen={setOpenCardId}
-			>
-				<div className={style.list__item}>
-					<img
-						className={style.list__img}
-						src={EXPERTISE[4].img}
-						alt={EXPERTISE[4].title}
-					/>
-					<div className={style.list__text_wrap}>
-						<p className={style.list__title}>
-							{EXPERTISE[4].title}
-						</p>
-						<p className={style.list__desc}>
-							{EXPERTISE[4].description}
-						</p>
-						<p className={style.list__type}>{EXPERTISE[4].type}</p>
-					</div>
-				</div>
-			</PortfolioItem>
-		</div>
+				</li>
+			))}
+		</ul>
 	);
 };
