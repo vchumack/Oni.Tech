@@ -9,36 +9,25 @@
 	height: 100vh;
 	margin: 0px auto;
 	background-color: $secondary-bg-color;
+	overflow-y: scroll;
 
 	@include media($tablet) {
 		position: unset;
 	}
 }
+nav::-webkit-scrollbar {
+	width: 0px;
+}
 .open {
-	transform: translateY(0);
-	transition: all 750ms ease-in;
-	transition-delay: 450ms;
+	transform: translateX(0);
+	transition: all 450ms ease-in;
 }
 
 .close {
-	transform: translateY(-100vh);
-	transition: all 350ms ease-in;
+	transform: translateX(-100vw);
+	transition: all 450ms ease-in;
 }
-.overlayOpen {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.101);
-	transform: translateY(0);
-	transition: all 750ms ease-in;
-}
-.overlayClosed {
-	transform: translateY(-100vh);
-	transition: all 550ms ease-out;
-	transition-delay: 450ms;
-}
+
 .closeBurger {
 	position: absolute;
 	top: 24px;

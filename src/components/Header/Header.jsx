@@ -9,7 +9,7 @@ import { ReactComponent as BurgerLines } from "../../assets/svg/burgerLines.svg"
 
 import style from "../Header/Header.module.scss";
 
-export const Header = ({ active, headerRef, current }) => {
+export const Header = ({ active, headerRef, current, isShow }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
@@ -28,6 +28,7 @@ export const Header = ({ active, headerRef, current }) => {
 			ref={headerRef}
 			style={{
 				color: `${isOdd ? "black" : "white"}`,
+				top: `${isShow ? "0px" : "-100%"}`,
 			}}
 		>
 			<div className={`container ${style.wrapper}`}>

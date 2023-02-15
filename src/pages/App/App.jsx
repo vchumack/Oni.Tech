@@ -29,7 +29,8 @@ function App() {
 
 	return (
 		<>
-			{isShow && <Header active={active} current={current} />}
+			<Header active={active} current={current} isShow={isShow} />
+
 			<ReactFullpage
 				scrollingSpeed={1000}
 				licenseKey={"YOUR_KEY_HERE"}
@@ -61,7 +62,7 @@ function App() {
 					);
 				}}
 			/>
-			{isShow && <Footer current={current} />}
+			<Footer current={current} isShow={isShow} />
 		</>
 	);
 }
