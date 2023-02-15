@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useMediaQuery } from "react-responsive";
-// import axios from "axios";
+import axios from "axios";
 
 import style from "../ContactForm/ContactForm.module.scss";
 
@@ -15,22 +15,27 @@ export const ContactForm = () => {
 	});
 	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
 
-	const onSubmit = (data) => {
+	const onSubmit = async (data) => {
+		let message = `<i>Application from the website</i>\n`;
+		message += `<i>Sender's name:</i> <b>${data.name}</b>\n`;
+		message += `<i>Method of Communication:</i> <b>${data.method}</b>\n`;
+		message += `<i>Sender's Idea:</i> <b>${data.describe}</b>`;
+
 		try {
-			// console.log(data);
-			// await axios.post(
-			//   "https://sheet.best/api/sheets/8e3a48aa-d794-45df-b76c-96f5c9cb843e",
-			//   data
-			// );
-			// await axios.post(
-			//   "https://api.telegram.org/bot5826218439:AAFcxuVEYJ9gOaOjEYy7qLre1vkGDseB15o/sendMessage",
-			//   {
-			//     chat_id: "-1001762357803",
-			//     parse_mode: "html",
-			//     text: JSON.stringify(data),
-			//   }
-			// );
 			console.log(data);
+			await axios.post(
+				"https://sheet.best/api/sheets/55bab151-3926-4d8a-b1f9-5ebb0085ebd1",
+				data
+			);
+			await axios.post(
+				"https://api.telegram.org/bot6277992489:AAFgm4AvImhQxrkcyGBe5MAeOyd7_1uge8o/sendMessage",
+				{
+					chat_id: "-1001714004559",
+					parse_mode: "html",
+					text: message,
+				}
+			);
+
 			reset();
 		} catch (error) {
 			console.log(error);

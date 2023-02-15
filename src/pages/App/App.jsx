@@ -33,6 +33,7 @@ function App() {
 
 			<ReactFullpage
 				scrollingSpeed={1000}
+				scrollOverflow={false}
 				licenseKey={"YOUR_KEY_HERE"}
 				onLeave={onLeave}
 				afterLoad={afterLoad}
