@@ -41,6 +41,12 @@ export const PortfolioItem = ({
 		);
 	}, [img.src, isOpen, title]);
 
+	// const renderText = () => {
+	// 	setTimeout(() => {
+	// 		return { display: "block" };
+	// 	}, 1000);
+	// };
+
 	return (
 		<button
 			onClick={handleExpertiseClick}
@@ -57,28 +63,32 @@ export const PortfolioItem = ({
 				{renderImage}
 				{isOpen ? (
 					<motion.div
-						// animate={{
-						// 	opacity: 1,
-						// }}
-						// initial={{
-						// 	opacity: 0,
-						// }}
-						// transition={{
-						// 	delay: 0.3,
-						// }}
+						animate={{
+							opacity: 1,
+						}}
+						initial={{
+							opacity: 0,
+						}}
+						transition={{
+							delay: 1.1,
+						}}
 						css={{
 							backgroundImage:
 								"linear-gradient(116.29deg, #87CDD2 -29.94%, rgba(255, 255, 255, 0.26) -29.93%, rgba(135, 205, 210, 0) 101.76%)",
 							background: "#ffffff20",
 							zIndex: "10",
 						}}
-						className="z-10 flex w-full flex-col items-start rounded-3xl p-6 max-sm:p-4 sm:backdrop-blur-[50px]"
+						className={style.item__motion}
 					>
 						<div className={style.item__text_wrap}>
 							<h3 className={style.item__title}>{title}</h3>
 							<p className={style.item__type}>{type}</p>
-
-							<p className={style.item__desc}>{description}</p>
+							<p
+								className={style.item__desc}
+								// style={renderText()}
+							>
+								{description}
+							</p>
 						</div>
 					</motion.div>
 				) : (
@@ -88,10 +98,11 @@ export const PortfolioItem = ({
 								opacity: 1,
 							}}
 							initial={{
+								// display: "none",
 								opacity: 0,
 							}}
 							transition={{
-								delay: 0.8,
+								delay: 1.3,
 							}}
 							className={style.close__type}
 						>
@@ -102,10 +113,11 @@ export const PortfolioItem = ({
 								opacity: 1,
 							}}
 							initial={{
+								// display: "none",
 								opacity: 0,
 							}}
 							transition={{
-								delay: 0.5,
+								delay: 1.5,
 							}}
 							className={style.close__title}
 						>
