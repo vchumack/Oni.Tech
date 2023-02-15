@@ -95,6 +95,7 @@
 
 .whyList {
 	display: flex;
+	height: fit-content;
 	flex-direction: column;
 	margin-top: 32px;
 	margin-bottom: 40px;
@@ -104,6 +105,9 @@
 		margin-left: auto;
 	}
 
+	@media (orientation: landscape) {
+		flex-direction: row;
+	}
 	@include media(desktopSmall) {
 		display: grid;
 		width: 100%;
@@ -138,12 +142,13 @@
 
 		backdrop-filter: blur(8.5px);
 		background: linear-gradient(#f4e9d6, #f4e9d6) padding-box,
-		linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.46)) border-box;
+			linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.46))
+				border-box;
 
 		border: 2px solid transparent;
 		box-shadow: 130.158px 118.469px 213px rgba(195, 174, 148, 0.14),
-		65.8925px 59.9748px 92.8547px rgba(195, 174, 148, 0.0945),
-		26.0316px 23.6938px 34.6125px rgba(195, 174, 148, 0.07);
+			65.8925px 59.9748px 92.8547px rgba(195, 174, 148, 0.0945),
+			26.0316px 23.6938px 34.6125px rgba(195, 174, 148, 0.07);
 
 		@include media(desktopSmall) {
 			position: relative;
@@ -174,9 +179,12 @@
 			&:hover:after {
 				opacity: 1;
 				background: linear-gradient(#f4e9d6, #f4e9d6) padding-box,
-					linear-gradient(45deg,
-						rgba(0, 0, 0, 0),
-						rgba(0, 0, 0, 0.46)) border-box;
+					linear-gradient(
+							45deg,
+							rgba(0, 0, 0, 0),
+							rgba(0, 0, 0, 0.46)
+						)
+						border-box;
 
 				transition: all 250ms linear;
 			}

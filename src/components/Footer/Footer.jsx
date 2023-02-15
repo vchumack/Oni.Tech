@@ -1,12 +1,13 @@
 import style from "../Footer/Footer.module.scss";
 
-export const Footer = ({ current, footerRef }) => {
+export const Footer = ({ current, footerRef, isShow }) => {
 	return (
 		<footer
 			className={style.footer}
 			ref={footerRef}
 			style={{
 				color: `${current % 2 !== 0 ? "black" : "white"}`,
+				bottom:`${isShow ? '0px': '-100%'}`
 			}}
 		>
 			<div className={`container ${style.wrapper}`}>
