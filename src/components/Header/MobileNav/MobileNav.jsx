@@ -6,7 +6,6 @@ import style from "./MobileNav.module.scss";
 export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 	return (
 		<>
-			<div className={isOpen ? style.overlayOpen : style.overlayClosed} />
 			<nav
 				className={`${style.nav} ${isOpen ? style.open : style.close}`}
 			>
