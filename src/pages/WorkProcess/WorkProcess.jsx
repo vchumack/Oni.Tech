@@ -4,7 +4,7 @@ export const WorkProcess = () => {
 	return (
 		// <section id="process" current="3">
 		<div className={`${style.wrapper} container`}>
-			<h2 className={style.title}>DEVELOPMENT STEPS</h2>
+			<h2 className={`${style.title} title`}>DEVELOPMENT STEPS</h2>
 			<ul className={style.cardsList}>
 				<li className={style.cardsItem}>
 					<div className={style.box}>

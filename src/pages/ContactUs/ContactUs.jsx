@@ -7,7 +7,7 @@ export const ContactUs = () => {
 	return (
 		// <section className={style.contactUs} id="contact" current="5">
 		<div className="container">
-			<h2 className={style.title}>LEAVE THE APPLICATION</h2>
+			<h2 className={`${style.title} title`}>LEAVE THE APPLICATION</h2>
 			<div className={style.box}>
 				<div className={style.contactBox}>
 					<p className={style.text}>

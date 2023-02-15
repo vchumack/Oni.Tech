@@ -15,7 +15,9 @@ export const Expertise = () => {
 					<p>us</p>
 				</div>
 			)}
-			<h2 className={style.heading}>BENEFITS OF WORKING WITH US</h2>
+			<h2 className={`${style.heading} title`}>
+				BENEFITS OF WORKING WITH US
+			</h2>
 			<ul className={style.whyList}>
 				{whyUs.map((item) => (
 					<li key={item.key} className={`${style.whyItem}`}>
