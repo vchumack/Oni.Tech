@@ -19,7 +19,7 @@
 	padding: 10px;
 	@include media(desktopSmall) {
 		min-height: 450px;
-		max-height: 500px;
+		// max-height: 500px;
 		padding: 48px 40px;
 
 		display: flex;
@@ -78,7 +78,7 @@
 
 	&__type {
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 16px;
 		// line-height: 22px;
 		font-style: italic;
 		position: relative;
@@ -131,16 +131,24 @@
 }
 
 .item {
+	// overflow: hidden;
 	display: flex;
 	height: 100%;
 	width: 100%;
 	align-items: flex-end;
 	justify-content: flex-end;
+
 	@include media(desktopSmall) {
 	}
-
+	&__motion {
+		// height: 100%;
+		padding: 100px 16px 16px 16px;
+		@include media(desktopSmall) {
+			padding: 40px 30px 40px 60px;
+		}
+	}
 	&__text_wrap {
-		margin: 100px 16px 16px 16px;
+		// overflow: hidden;
 		text-align: start;
 		background: linear-gradient(
 			116.29deg,
@@ -157,9 +165,6 @@
 		-moz-animation: fadeInFromNone 0.4s ease-out;
 		-o-animation: fadeInFromNone 0.4s ease-out;
 		animation: fadeInFromNone 0.4s ease-out;
-		@include media(desktopSmall) {
-			margin: 48px 63px 48px 100px;
-		}
 	}
 	&__title {
 		font-weight: 400;
@@ -175,13 +180,14 @@
 		}
 	}
 	&__desc {
+		// display: none;
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 14px;
-
+		// text-overflow: ellipsis;
 		color: rgba(255, 255, 255, 0.8);
 		@include media(desktopSmall) {
-			font-size: 18px;
+			font-size: 16px;
 			line-height: 22px;
 		}
 	}
@@ -192,7 +198,7 @@
 		right: 16px;
 
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 22px;
 
 		color: $primary-text-color;

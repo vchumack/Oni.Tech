@@ -60,7 +60,7 @@ const EXPERTISE = [
 export const PortfolioList = () => {
 	const [open, setOpen] = useState(0);
 	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
-
+	// console.log("open", open);
 	return (
 		<ul className={style.list}>
 			{EXPERTISE.map((expertise, index) => (
@@ -70,6 +70,7 @@ export const PortfolioList = () => {
 					style={
 						isBigScreen
 							? {
+									// transform: `translateY(0)`,
 									transform: `translateX(-${index * 1.9}rem)`,
 									zIndex: EXPERTISE.length - index,
 									// {open === index ? flexBasis:"49%":flexBasis:"9.5%"},
@@ -78,6 +79,7 @@ export const PortfolioList = () => {
 									// 	flexBasis:
 									// 		open === index ? "49%" : "9.5%",
 									// },
+
 									flex:
 										open === index
 											? "1 0 49%"
@@ -85,8 +87,10 @@ export const PortfolioList = () => {
 							  }
 							: {
 									zIndex: EXPERTISE.length - index,
-									transform: `translateX(0)`,
-									transform: `translateY(-${index * 1.5}rem)`,
+									transform: `translate(0,-${
+										index * 1.5
+									}rem)`,
+									// transform: `translateY(-${index * 1.5}rem)`,
 									flex:
 										open === index
 											? "1 0 45%"
