@@ -185,3 +185,24 @@ body {
 .contactUs {
 	color: $primary-text-color;
 }
+
+.title {
+	font-size: 21px;
+	line-height: 1.2;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	@include media('tablet') {
+		font-size: 26px;
+		font-weight: 400;
+	}
+
+	@include media('desktopMiddle') {
+		font-size: 40px;
+
+	}
+
+	@include media('desktop') {
+		font-size: 60px;
+	}
+}
