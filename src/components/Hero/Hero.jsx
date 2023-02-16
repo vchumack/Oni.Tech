@@ -37,6 +37,7 @@ export const Hero = () => {
 					gradientColor={"no"}
 					style={{
 						width: "100vw",
+						position: "relative",
 					}}
 				>
 					<div className={style.hero__loop}>
