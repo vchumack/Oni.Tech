@@ -2,15 +2,24 @@
 @import "../../shared/styles/mixins";
 
 .wrapper {
+   // margin: auto auto !important;
+
    @media screen and (max-width:1099.9px) {
-      min-height: 700px;
+      // min-height: 700px;
+
+      margin: auto auto;
    }
 }
 
 .title {
-   margin-bottom: 32px;
+   // margin-bottom: 32px;
+   margin-bottom: 20px;
 
    color: $primary-text-color;
+
+   @media (orientation: landscape) {
+      margin-top: -4%;
+   }
 
    @include media('desktopSmall') {
       margin-bottom: 70px;
@@ -32,6 +41,13 @@
       margin-left: 64px;
 
    }
+
+   @media (orientation: landscape) {
+      @include flex(center);
+      margin-left: 64px;
+      // height: fit-content;
+      // flex-direction: row;
+   }
 }
 
 .cardsItem {
@@ -39,6 +55,15 @@
    z-index: 0;
    margin-bottom: -55px;
    border-radius: 16px;
+
+
+
+   @media (orientation: landscape) {
+      margin-bottom: 0;
+      margin-left: -64px;
+      width: 100%;
+      // min-height: 340px;
+   }
 
    @include media('desktopSmall') {
       margin-bottom: 0;
@@ -49,6 +74,7 @@
 
    @include media('desktopMiddle') {}
 
+
    @include media('desktop') {
       min-height: 434px;
    }
@@ -56,13 +82,24 @@
    .box {
       position: relative;
       padding: 24px;
-      padding-bottom: 96px;
+      // padding-bottom: 96px;
+      padding-bottom: 60px;
 
       background: $secondary-bg-color;
       background-clip: padding-box;
       background-image: $linear-bg-color;
       border: solid 1.5px transparent;
       border-radius: 16px;
+
+
+      @media (orientation: landscape) {
+         padding-top: 10px;
+         padding-left: 10px;
+         padding-bottom: 10px;
+         padding-right: 80px;
+         height: 100%;
+         border-radius: 16px;
+      }
 
       @include media('desktopSmall') {
          padding-bottom: 24px;
@@ -108,8 +145,13 @@
 
       color: $primary-text-color;
       font-weight: 400;
-      font-size: 18px;
+      // font-size: 18px;
+      font-size: 16px;
       line-height: 1.2;
+
+      @media (orientation: landscape) {
+         font-size: 12px;
+      }
 
       @include media('tablet') {
          margin-bottom: 16px;
@@ -135,17 +177,26 @@
 
    p {
       margin-bottom: 8px;
+
+
    }
 
    p,
    li {
       color: $fourth-text-color;
       font-weight: 400;
-      font-size: 12px;
+      // font-size: 12px;
+      font-size: 10px;
       line-height: 1.41;
+
+
 
       @include media('tablet') {
          font-size: 16px;
+      }
+
+      @media (orientation: landscape) {
+         font-size: 12px !important;
       }
 
       @include media('desktopMiddle') {
@@ -163,8 +214,14 @@
 
 
 .cardsItem:last-child div {
+
    @media screen and (max-width:1099.9px) {
       padding-bottom: 45px;
+   }
+
+   @media (orientation: landscape) {
+      padding-bottom: 24px;
+      padding-right: 24px;
    }
 }
 
