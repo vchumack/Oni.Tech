@@ -3,7 +3,19 @@
 
 .portfolio {
 	background-color: $third-bg-color;
+	// transition: 1s;
+	&__container {
+		padding: 0 16px;
+		margin: 0 auto;
+		min-height: 620px;
 
+		@media (min-width: 768px) {
+			min-height: 100%;
+			margin: 0;
+			max-width: 1920px;
+			padding: 0 80px;
+		}
+	}
 	&__title {
 		margin-bottom: 32px;
 

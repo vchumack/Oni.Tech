@@ -19,7 +19,12 @@ export const PortfolioItem = ({
 			// route && router.push(route)
 			console.log("Go to page");
 		} else {
+			// const text = document.querySelectorAll(".close__type");
+			// console.log("text", text);
 			setOpen(index);
+			// setTimeout(() => {
+			// 	alert("I love async JS!");
+			// }, 1000);
 		}
 	};
 
@@ -40,12 +45,6 @@ export const PortfolioItem = ({
 			/>
 		);
 	}, [img.src, isOpen, title]);
-
-	// const renderText = () => {
-	// 	setTimeout(() => {
-	// 		return { display: "block" };
-	// 	}, 1000);
-	// };
 
 	return (
 		<button
@@ -70,7 +69,7 @@ export const PortfolioItem = ({
 							opacity: 0,
 						}}
 						transition={{
-							delay: 1.1,
+							delay: 0.8,
 						}}
 						css={{
 							backgroundImage:
@@ -98,11 +97,11 @@ export const PortfolioItem = ({
 								opacity: 1,
 							}}
 							initial={{
-								// display: "none",
 								opacity: 0,
 							}}
 							transition={{
-								delay: 1.3,
+								type: "spring",
+								stiffness: 100,
 							}}
 							className={style.close__type}
 						>
@@ -113,11 +112,11 @@ export const PortfolioItem = ({
 								opacity: 1,
 							}}
 							initial={{
-								// display: "none",
 								opacity: 0,
 							}}
 							transition={{
-								delay: 1.5,
+								type: "spring",
+								stiffness: 100,
 							}}
 							className={style.close__title}
 						>

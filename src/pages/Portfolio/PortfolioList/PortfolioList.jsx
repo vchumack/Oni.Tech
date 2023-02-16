@@ -80,10 +80,7 @@ export const PortfolioList = () => {
 									// 		open === index ? "49%" : "9.5%",
 									// },
 
-									flex:
-										open === index
-											? "1 0 49%"
-											: "1 0 10.2%",
+									flex: open === index ? "1 0 49%" : "1 0 9%",
 							  }
 							: {
 									zIndex: EXPERTISE.length - index,

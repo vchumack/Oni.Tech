@@ -19,7 +19,10 @@
 	padding: 10px;
 	@include media(desktopSmall) {
 		min-height: 450px;
-		// max-height: 500px;
+		max-height: 700px;
+
+		height: 100%;
+
 		padding: 48px 40px;
 
 		display: flex;
@@ -27,8 +30,6 @@
 		flex-direction: row;
 
 		writing-mode: vertical-lr;
-
-		height: 100%;
 
 		// background: linear-gradient(
 		// 		0deg,
@@ -149,6 +150,7 @@
 	}
 	&__text_wrap {
 		// overflow: hidden;
+		position: relative;
 		text-align: start;
 		background: linear-gradient(
 			116.29deg,
@@ -165,6 +167,9 @@
 		-moz-animation: fadeInFromNone 0.4s ease-out;
 		-o-animation: fadeInFromNone 0.4s ease-out;
 		animation: fadeInFromNone 0.4s ease-out;
+		// @include media(desktopSmall) {
+		// 	// width: 90%;
+		// }
 	}
 	&__title {
 		font-weight: 400;
