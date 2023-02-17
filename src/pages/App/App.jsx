@@ -18,11 +18,11 @@ function App() {
 	const [active, setActive] = useState("home");
 	const [isShow, setIsShow] = useState(true);
 	const anchors = ["home", "expertise", "process", "portfolio", "contact"];
-	console.log("active", active);
+	// console.log("active", active);
 	const onLeave = (_, destination) => {
 		setCurrent(destination.index);
 		setActive(destination.anchor);
-		console.log("destination", destination);
+		// console.log("destination", destination);
 		setIsShow(false);
 	};
 	const afterLoad = () => setIsShow(true);
