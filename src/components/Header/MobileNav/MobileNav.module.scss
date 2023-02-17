@@ -47,10 +47,31 @@ nav::-webkit-scrollbar {
 	padding: 15px 0px;
 	text-align: center;
 	border-bottom: 0.5px solid rgba(245, 233, 214, 0.5);
+
+	&:last-of-type {
+		border-bottom: none;
+		a:last-of-type {
+			padding: 16px 32px;
+			cursor: pointer;
+			width: 100%;
+			border-radius: 12px;
+			text-align: center;
+			font-weight: 800;
+			font-size: 16px;
+			line-height: 140%;
+
+			color: $secondary-text-color;
+			background-color: $fourth-bg-color;
+		}
+	}
 }
 
 .navLink {
+	display: block;
+	margin: 0px auto;
+	position: relative;
 	color: $primary-text-color;
+	width: fit-content;
 	font-size: 18px;
 	font-weight: 600;
 }

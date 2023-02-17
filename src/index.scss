@@ -96,7 +96,6 @@ section {
 	// @include media(desktopSmall) {
 	// 	padding-top: 150px;
 	// }
-
 }
 
 .work-process {
@@ -110,7 +109,6 @@ section {
 		padding: 43px 0 43px 0;
 	}
 }
-
 
 // main {
 // 	// height: 100vh;
@@ -144,11 +142,18 @@ body {
 }
 
 .active {
-	border-bottom: 1px solid white;
+	color: white;
+	position: relative;
 }
 
 .activeOdd {
-	border-bottom: 1px solid black;
+	color: black;
+	position: relative;
+}
+
+.activeNav {
+	position: absolute;
+	bottom: -5px;
 }
 
 .anchor {
@@ -285,7 +290,6 @@ body {
 
 .fp-table:nth-child(5) {
 	display: block;
-
 
 	@include media(desktopSmall) {
 		padding-top: 90px;
