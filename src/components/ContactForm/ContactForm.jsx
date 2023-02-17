@@ -22,7 +22,7 @@ export const ContactForm = () => {
 		message += `<i>Sender's Idea:</i> <b>${data.describe}</b>`;
 
 		try {
-			console.log(data);
+			// console.log(data);
 			await axios.post(
 				"https://sheet.best/api/sheets/55bab151-3926-4d8a-b1f9-5ebb0085ebd1",
 				data

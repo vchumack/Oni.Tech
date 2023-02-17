@@ -30,21 +30,6 @@
 		flex-direction: row;
 
 		writing-mode: vertical-lr;
-
-		// background: linear-gradient(
-		// 		0deg,
-		// 		rgba(0, 0, 0, 0.58),
-		// 		rgba(0, 0, 0, 0.58)
-		// 	),
-		// 	url(.jpg);
-
-		// border: 16px solid #fef7e9;
-
-		// box-shadow: 130.158px 118.469px 213px rgba(195, 174, 148, 0.14),
-		// 	65.8925px 59.9748px 92.8547px rgba(195, 174, 148, 0.0945),
-		// 	26.0316px 23.6938px 34.6125px rgba(195, 174, 148, 0.07),
-		// 	5.69442px 5.18301px 12.3141px rgba(195, 174, 148, 0.0455);
-		// border-radius: 32px;
 	}
 
 	&__img {
@@ -61,14 +46,8 @@
 	&__title {
 		font-weight: 400;
 		font-size: 16px;
-		// line-height: 19px;
 
 		color: $primary-text-color;
-
-		-webkit-animation: fadeInFromNone 0.4s ease-out;
-		-moz-animation: fadeInFromNone 0.4s ease-out;
-		-o-animation: fadeInFromNone 0.4s ease-out;
-		animation: fadeInFromNone 0.4s ease-out;
 
 		@include media(desktopSmall) {
 			transform: rotate(-180deg);
@@ -80,15 +59,11 @@
 	&__type {
 		font-weight: 400;
 		font-size: 16px;
-		// line-height: 22px;
+
 		font-style: italic;
 		position: relative;
 		color: $primary-text-color;
 
-		-webkit-animation: fadeInFromNone 1s ease-out;
-		-moz-animation: fadeInFromNone 1s ease-out;
-		-o-animation: fadeInFromNone 1s ease-out;
-		animation: fadeInFromNone 1s ease-out;
 		&::before {
 			content: "";
 			display: inline-block;
@@ -112,27 +87,9 @@
 			transform: rotate(-180deg);
 		}
 	}
-
-	@-webkit-keyframes fadeInFromNone {
-		0% {
-			display: none;
-			opacity: 0;
-		}
-
-		1% {
-			display: block;
-			opacity: 0;
-		}
-
-		100% {
-			display: block;
-			opacity: 1;
-		}
-	}
 }
 
 .item {
-	// overflow: hidden;
 	display: flex;
 	height: 100%;
 	width: 100%;
@@ -142,16 +99,15 @@
 	@include media(desktopSmall) {
 	}
 	&__motion {
-		// height: 100%;
 		padding: 100px 16px 16px 16px;
 		@include media(desktopSmall) {
 			padding: 40px 30px 40px 60px;
 		}
 	}
 	&__text_wrap {
-		// overflow: hidden;
 		position: relative;
 		text-align: start;
+
 		background: linear-gradient(
 			116.29deg,
 			#87cdd2 -29.94%,
@@ -159,17 +115,8 @@
 			rgba(135, 205, 210, 0) 101.76%
 		);
 
-		backdrop-filter: blur(50px);
 		padding: 24px;
 		border-radius: 24px;
-
-		-webkit-animation: fadeInFromNone 0.4s ease-out;
-		-moz-animation: fadeInFromNone 0.4s ease-out;
-		-o-animation: fadeInFromNone 0.4s ease-out;
-		animation: fadeInFromNone 0.4s ease-out;
-		// @include media(desktopSmall) {
-		// 	// width: 90%;
-		// }
 	}
 	&__title {
 		font-weight: 400;
@@ -185,11 +132,10 @@
 		}
 	}
 	&__desc {
-		// display: none;
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 14px;
-		// text-overflow: ellipsis;
+
 		color: rgba(255, 255, 255, 0.8);
 		@include media(desktopSmall) {
 			font-size: 16px;
@@ -227,23 +173,6 @@
 		@include media(desktopSmall) {
 			top: 36px;
 			right: 24px;
-		}
-	}
-
-	@-webkit-keyframes fadeInFromNone {
-		0% {
-			display: none;
-			opacity: 0;
-		}
-
-		1% {
-			display: block;
-			opacity: 0;
-		}
-
-		100% {
-			display: block;
-			opacity: 1;
 		}
 	}
 }
