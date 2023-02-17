@@ -14,29 +14,57 @@ $primary-text-color: #ffffff;
 $secondary-text-color: #000000;
 $third-text-color: rgba(255, 255, 255, 0.5);
 $fourth-text-color: rgba(255, 255, 255, 0.7);
+$card-number-color: rgba(0, 0, 0, 0.4);
 
 $primary-bg-color: #ffffff;
 $secondary-bg-color: #000000;
 $third-bg-color: #f5e9d6;
 $fourth-bg-color: #f4e9d6;
 $success-bg-color: rgba(189, 255, 0, 0.17);
-
+$card-background: rgba(255, 255, 255, 0.44);
+$benefits-bg: linear-gradient(253.56deg, #fffaf1 4.77%, #f4e9d5 98.57%);
 $scrollbar-color: #2e2e2c;
 $secondary-scrollbar-color: #04867586;
 
-$linear-bg-color: linear-gradient(116.29deg,
-      #87cdd2 -29.94%,
-      rgba(255, 255, 255, 0.26) -29.93%,
-      rgba(135, 205, 210, 0) 101.76%);
+$card-shadow: 130.158px 118.469px 213px rgba(195, 174, 148, 0.14),
+	65.8925px 59.9748px 92.8547px rgba(195, 174, 148, 0.0945),
+	26.0316px 23.6938px 34.6125px rgba(195, 174, 148, 0.07);
 
-$linear-border-color: linear-gradient(165deg,
-      #87cdd2 -13.38%,
-      rgba(255, 255, 255, 0) 90%);
+$card-small-linear: linear-gradient(#f6f1e7, #f6f1e7) padding-box,
+	linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.46)) border-box;
 
-$linear-second-border-color: linear-gradient(108deg,
-      #87cdd2 -13.38%,
-      rgba(255, 255, 255, 0) 101%);
+$card-big-linear: linear-gradient(#f4e9d6, #f4e9d6) padding-box,
+	linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.46)) border-box;
 
-$linear-focus-border-color: linear-gradient(121deg, #fef7e9 -13.38%, #fef7e9 91.48%);
+$linear-bg-color: linear-gradient(
+	116.29deg,
+	#87cdd2 -29.94%,
+	rgba(255, 255, 255, 0.26) -29.93%,
+	rgba(135, 205, 210, 0) 101.76%
+);
 
-$linear-error-color: linear-gradient(88.77deg, #F88888 0.7%, #CE4545 23.71%, #DE3737 47.86%, #991616 98.95%);
+$linear-border-color: linear-gradient(
+	165deg,
+	#87cdd2 -13.38%,
+	rgba(255, 255, 255, 0) 90%
+);
+
+$linear-second-border-color: linear-gradient(
+	108deg,
+	#87cdd2 -13.38%,
+	rgba(255, 255, 255, 0) 101%
+);
+
+$linear-focus-border-color: linear-gradient(
+	121deg,
+	#fef7e9 -13.38%,
+	#fef7e9 91.48%
+);
+
+$linear-error-color: linear-gradient(
+	88.77deg,
+	#f88888 0.7%,
+	#ce4545 23.71%,
+	#de3737 47.86%,
+	#991616 98.95%
+);
