@@ -29,7 +29,13 @@ export const Hero = () => {
 						<span className={style.hero__title_bold}>business</span>
 						<br className={style.hero__br} /> from idea
 					</h1>
-					<button className={style.hero__btn}>Contact us</button>
+					<a
+						href="#contact"
+						data-menuanchor="contact"
+						className={style.hero__btn}
+					>
+						Contact us
+					</a>
 				</div>
 			</div>
 			<div className={style.hero__loop_wrap}>
