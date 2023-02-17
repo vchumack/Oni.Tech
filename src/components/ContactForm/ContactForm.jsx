@@ -145,10 +145,12 @@ export const ContactForm = () => {
 				</button>
 			</div>
 			{isSubmitSuccessful && (
-				<p className={style.successText}>
-					Thank you for your application. We will get back to you as
-					soon as possible.
-				</p>
+				<div className={style.successBox}>
+					<p className={style.successText}>
+						Thank you for your application. We will get back to you
+						as soon as possible.
+					</p>
+				</div>
 			)}
 		</form>
 	);
