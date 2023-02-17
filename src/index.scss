@@ -88,11 +88,12 @@ select {
 // Section
 
 section {
-	padding: 150px 0 77px 0;
-	height: 100vh;
+	// padding: 150px 0 77px 0;
+	padding-top: 100px;
+	// height: 100vh;
 
-	@media screen and (min-height: 300px) {
-		padding: 70px 0 70px 0;
+	@include media(desktopSmall) {
+		padding-top: 150px;
 	}
 }
 
@@ -102,9 +103,9 @@ section {
 	}
 }
 
-main {
-	height: 100vh;
-}
+// main {
+// 	// height: 100vh;
+// }
 
 /* Applying styles to buttons */
 
@@ -118,7 +119,7 @@ body {
 	font-family: $fontFamilyBase;
 	background-color: black;
 	/* Default basic settings for body*/
-	min-height: 100vh;
+	// min-height: 100vh;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }
@@ -254,21 +255,20 @@ body {
 	display: block;
 }
 
-.fp-table:nth-child(3) .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	height: 100%;
+// .fp-table:nth-child(3) .container {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: flex-start;
+// 	height: 100%;
 
+// 	@include media(desktopSmall) {
+// 		justify-content: center;
+// 	}
 
-	@include media(desktopSmall) {
-		justify-content: center;
-	}
-
-	@include landscape() {
-		justify-content: center;
-	}
-}
+// 	@include landscape() {
+// 		justify-content: center;
+// 	}
+// }
 
 .fp-table:nth-child(5) {
 	display: block;
@@ -279,7 +279,6 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	height: 100%;
-
 
 	// @include media(desktopSmall) {
 	// 	justify-content: center;
@@ -292,7 +291,6 @@ body {
 
 .fp-table:nth-child(1) {
 	display: block;
-
 }
 
 // .fp-table:nth-child(3) {

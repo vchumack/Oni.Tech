@@ -1,228 +1,203 @@
 @import "../../shared//styles/variables";
 @import "../../shared/styles/mixins";
 
-
-
 .wrapper {
-   // margin: auto auto !important;
+	// margin: auto auto !important;
 
-   @media screen and (max-width:1099.9px) {
-      // min-height: 700px;
+	@media screen and (max-width: 1099.9px) {
+		// min-height: 700px;
 
-      margin: auto auto;
-   }
-
-
-
+		// margin: auto auto;
+	}
 }
 
 .title {
-   margin-bottom: 32px;
-   // margin-bottom: 20px;
+	margin-bottom: 32px;
+	// margin-bottom: 20px;
 
-   color: $primary-text-color;
+	color: $primary-text-color;
 
+	@include media("desktopSmall") {
+		margin-bottom: 70px;
+	}
 
-   @include media('desktopSmall') {
-      margin-bottom: 70px;
-   }
+	@include media("desktopMiddle") {
+		margin-bottom: 100px;
+	}
 
-   @include media('desktopMiddle') {
-      margin-bottom: 100px;
-   }
-
-   @include landscape() {
-      margin-bottom: 17px;
-   }
-
+	@include landscape() {
+		margin-bottom: 17px;
+	}
 }
 
 .cardsList {
-   position: relative;
-   margin: 2px;
+	position: relative;
+	margin: 2px;
 
-   @include media('desktopSmall') {
-      @include flex(center);
-      margin-left: 64px;
-   }
+	@include media("desktopSmall") {
+		@include flex(center);
+		margin-left: 64px;
+	}
 
-   @include landscape() {
-      @include flex();
-      padding-left: 34px;
-   }
-
+	@include landscape() {
+		@include flex();
+		padding-left: 34px;
+	}
 }
 
 .cardsItem {
-   position: relative;
-   z-index: 0;
-   margin-bottom: -55px;
-   border-radius: 16px;
+	position: relative;
+	z-index: 0;
+	margin-bottom: -55px;
+	border-radius: 16px;
 
+	@include media("desktopSmall") {
+		margin-bottom: 0;
+		margin-left: -64px;
+		width: 100%;
+		min-height: 340px;
+	}
 
-   @include media('desktopSmall') {
-      margin-bottom: 0;
-      margin-left: -64px;
-      width: 100%;
-      min-height: 340px;
-   }
+	@include media("desktop") {
+		min-height: 434px;
+	}
 
+	@include landscape() {
+		@include flex();
+		// margin-bottom: 24px;
+		// padding-bottom: 24px;
+		margin-left: -34px;
+		width: 100%;
+		margin-bottom: 0;
+		// height: 100%;
+	}
 
-   @include media('desktop') {
-      min-height: 434px;
-   }
+	.box {
+		position: relative;
+		padding: 24px;
+		// padding-bottom: 96px;
+		padding-bottom: 70px;
 
-   @include landscape() {
-      @include flex();
-      // margin-bottom: 24px;
-      // padding-bottom: 24px;
-      margin-left: -34px;
-      width: 100%;
-      margin-bottom: 0;
-      // height: 100%;
-   }
+		background: $secondary-bg-color;
+		background-clip: padding-box;
+		background-image: $linear-bg-color;
+		border: solid 1.5px transparent;
+		border-radius: 16px;
 
-   .box {
-      position: relative;
-      padding: 24px;
-      // padding-bottom: 96px;
-      padding-bottom: 70px;
+		@include media("desktopSmall") {
+			padding-bottom: 24px;
+			padding-right: 80px;
+			height: 100%;
+			border-radius: 40px;
+		}
 
-      background: $secondary-bg-color;
-      background-clip: padding-box;
-      background-image: $linear-bg-color;
-      border: solid 1.5px transparent;
-      border-radius: 16px;
+		@include media("desktop") {
+			padding: 32px 122px 32px 32px;
+		}
 
+		@include landscape() {
+			padding: 14px 40px 14px 14px;
 
-      @include media('desktopSmall') {
-         padding-bottom: 24px;
-         padding-right: 80px;
-         height: 100%;
-         border-radius: 40px;
-      }
+			// padding-bottom: 24px;
+		}
+	}
 
-      @include media('desktop') {
-         padding: 32px 122px 32px 32px;
-      }
+	.box::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		margin: -1.5px;
+		border-radius: 16px;
+		background: $linear-second-border-color;
 
-      @include landscape() {
-         padding: 14px 40px 14px 14px;
+		transition: $transition;
 
+		@include media("desktopSmall") {
+			border-radius: 40px;
+		}
+	}
 
-         // padding-bottom: 24px;
+	.box:hover::before {
+		background: $primary-bg-color;
+		margin: -3px;
+		cursor: pointer;
+	}
 
-      }
-   }
+	h3 {
+		margin-bottom: 8px;
 
-   .box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      margin: -1.5px;
-      border-radius: 16px;
-      background: $linear-second-border-color;
+		color: $primary-text-color;
+		font-weight: 400;
+		font-size: 18px;
+		// font-size: 16px;
+		line-height: 1.2;
 
-      transition: $transition;
+		@include media("tablet") {
+			margin-bottom: 16px;
+			font-size: 20px;
+		}
 
-      @include media('desktopSmall') {
-         border-radius: 40px;
-      }
-   }
+		@include media("desktopMiddle") {
+			margin-bottom: 24px;
+			font-size: 30px;
+		}
 
-   .box:hover::before {
-      background: $primary-bg-color;
-      margin: -3px;
-      cursor: pointer;
-   }
+		@include media("desktop") {
+			font-size: 38px;
+		}
 
+		@include landscape() {
+			font-size: 12px;
+		}
+	}
 
+	ul {
+		margin-top: 10px;
+		margin-left: 6px;
+		list-style: disc;
+		list-style-position: inside;
+	}
 
-   h3 {
-      margin-bottom: 8px;
+	p,
+	li {
+		color: $fourth-text-color;
+		font-weight: 400;
+		// font-size: 12px;
+		font-size: 10px;
+		line-height: 1.41;
 
-      color: $primary-text-color;
-      font-weight: 400;
-      font-size: 18px;
-      // font-size: 16px;
-      line-height: 1.2;
+		@include media("tablet") {
+			font-size: 16px;
+		}
 
+		@include landscape() {
+			font-size: 12px;
+		}
 
-      @include media('tablet') {
-         margin-bottom: 16px;
-         font-size: 20px;
-      }
+		@include media("desktopMiddle") {
+			font-size: 18px;
+		}
 
-      @include media('desktopMiddle') {
-         margin-bottom: 24px;
-         font-size: 30px;
-      }
-
-      @include media('desktop') {
-         font-size: 38px;
-      }
-
-      @include landscape() {
-         font-size: 12px;
-      }
-   }
-
-   ul {
-      margin-top: 10px;
-      margin-left: 6px;
-      list-style: disc;
-      list-style-position: inside;
-
-   }
-
-   p,
-   li {
-      color: $fourth-text-color;
-      font-weight: 400;
-      // font-size: 12px;
-      font-size: 10px;
-      line-height: 1.41;
-
-
-
-      @include media('tablet') {
-         font-size: 16px;
-      }
-
-      @include landscape() {
-         font-size: 12px;
-      }
-
-      @include media('desktopMiddle') {
-         font-size: 18px;
-      }
-
-      @include media('desktop') {
-         font-size: 20px;
-      }
-   }
-
-
+		@include media("desktop") {
+			font-size: 20px;
+		}
+	}
 }
-
-
 
 .cardsItem:last-child div {
+	@media screen and (max-width: 1099.9px) {
+		padding-bottom: 45px;
+	}
 
-   @media screen and (max-width:1099.9px) {
-      padding-bottom: 45px;
-   }
-
-   @include landscape() {
-      padding-bottom: 14px;
-      padding-right: 14px;
-   }
+	@include landscape() {
+		padding-bottom: 14px;
+		padding-right: 14px;
+	}
 }
-
 
 // .cardsItem:not(:last-child) div {
 
