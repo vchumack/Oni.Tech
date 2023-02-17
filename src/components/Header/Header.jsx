@@ -7,6 +7,7 @@ import { NavBar } from "./NavBar/NavBar";
 import { MobileNav } from "./MobileNav/MobileNav";
 import { ReactComponent as BurgerLines } from "../../assets/svg/burgerLines.svg";
 
+
 import style from "../Header/Header.module.scss";
 
 export const Header = ({ active, headerRef, current, isShow }) => {

@@ -7,7 +7,6 @@ export const Expertise = () => {
 	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
 	return (
-		// <section className={style.section} current="2" id="expertise">
 		<>
 			<div className="container">
 				<h2 className={`${style.heading} title`}>
@@ -34,6 +33,5 @@ export const Expertise = () => {
 				</ul>
 			</div>
 		</>
-		// </section>
 	);
 };

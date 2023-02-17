@@ -1,5 +1,6 @@
 import { links } from "../../data/header";
 import { ReactComponent as BurgerCross } from "../../../assets//svg/burgerCross.svg";
+import { ReactComponent as ActiveNav } from "../../../assets/svg/navUnderline.svg";
 
 import style from "./MobileNav.module.scss";
 
@@ -20,16 +21,25 @@ export const MobileNav = ({ isOpen, toggleBurger, active }) => {
 							className={style.navItem}
 							key={link.key}
 							data-menuanchor={link.current}
+							style={
+								active === link.current
+									? { borderBottom: "0.5px solid white" }
+									: {}
+							}
 						>
 							<a
 								href={link.href}
-								className={
-									active === link.current
-										? `${style.navLink} active`
-										: style.navLink
-								}
+								className={`${style.navLink}`}
 								onClick={toggleBurger}
 							>
+								{/* {active === link.current && (
+									<ActiveNav
+										width={"100%"}
+										hegiht={1}
+										fill="currentColor"
+										className="activeNav"
+									/>
+								)} */}
 								{link.text}
 							</a>
 						</li>

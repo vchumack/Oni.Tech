@@ -1,5 +1,7 @@
 import { links } from "../../data/header";
 
+import { ReactComponent as ActiveNav } from "../../../assets/svg/navUnderline.svg";
+
 import style from "./NavBar.module.scss";
 
 export const NavBar = ({ active, current }) => {
@@ -23,12 +25,17 @@ export const NavBar = ({ active, current }) => {
 							href={link.href}
 							className={
 								active === link.current
-									? `${style.navLink} ${
-											isOdd ? "activeOdd" : "active"
-									  }`
+									? `${style.navLink} ${isOdd && "activeOdd"}`
 									: style.navLink
 							}
 						>
+							{active === link.current && (
+								<ActiveNav
+									width={"100%"}
+									fill="currentColor"
+									className="activeNav"
+								/>
+							)}
 							{link.text}
 						</a>
 					</li>
