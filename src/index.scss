@@ -96,6 +96,12 @@ section {
 	}
 }
 
+.work-process {
+	@include landscape() {
+		padding: 43px 0 43px 0;
+	}
+}
+
 main {
 	height: 100vh;
 }
@@ -209,10 +215,12 @@ body {
 .fp-watermark {
 	display: none;
 }
+
 .fp-table:nth-child(2) {
 	position: relative;
 	display: block;
 }
+
 .fp-table:nth-child(2) .container {
 	margin: 0px auto;
 	padding: 0px 16px;
@@ -222,29 +230,75 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 24px;
+
 	@include media(tablet) {
 		padding: 0 80px;
 	}
+
 	@include media(desktopSmall) {
 		// padding: 40px 80px;
 		justify-content: space-around;
 	}
+
 	@include media(desktopMiddle) {
 		justify-content: center;
 	}
+
 	@include media(desktop) {
 		justify-content: center;
 		gap: 32px;
 	}
 }
 
-.fp-table:nth-child(1) {
+.fp-table:nth-child(3) {
 	display: block;
 }
 
-.fp-table:nth-child(3) {
-	display: block;
+.fp-table:nth-child(3) .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 100%;
+
+
 	@include media(desktopSmall) {
-		display: flex;
+		justify-content: center;
+	}
+
+	@include landscape() {
+		justify-content: center;
 	}
 }
+
+.fp-table:nth-child(5) {
+	display: block;
+}
+
+.fp-table:nth-child(5) .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 100%;
+
+
+	// @include media(desktopSmall) {
+	// 	justify-content: center;
+	// }
+
+	// @include landscape() {
+	// 	justify-content: center;
+	// }
+}
+
+.fp-table:nth-child(1) {
+	display: block;
+
+}
+
+// .fp-table:nth-child(3) {
+// 	// display: block;
+
+// 	@include media(desktopSmall) {
+// 		display: flex;
+// 	}
+// }
