@@ -49,7 +49,7 @@ function App() {
 								<section className="section expertise">
 									<Expertise />
 								</section>
-								<section className="section">
+								<section className="section work-process">
 									<WorkProcess />
 								</section>
 								<section className="section portfolio">

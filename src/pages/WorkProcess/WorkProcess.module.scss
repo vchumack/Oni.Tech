@@ -1,6 +1,8 @@
 @import "../../shared//styles/variables";
 @import "../../shared/styles/mixins";
 
+
+
 .wrapper {
    // margin: auto auto !important;
 
@@ -9,17 +11,17 @@
 
       margin: auto auto;
    }
+
+
+
 }
 
 .title {
-   // margin-bottom: 32px;
-   margin-bottom: 20px;
+   margin-bottom: 32px;
+   // margin-bottom: 20px;
 
    color: $primary-text-color;
 
-   @media (orientation: landscape) {
-      margin-top: -4%;
-   }
 
    @include media('desktopSmall') {
       margin-bottom: 70px;
@@ -29,6 +31,9 @@
       margin-bottom: 100px;
    }
 
+   @include landscape() {
+      margin-bottom: 17px;
+   }
 
 }
 
@@ -39,15 +44,13 @@
    @include media('desktopSmall') {
       @include flex(center);
       margin-left: 64px;
-
    }
 
-   @media (orientation: landscape) {
-      @include flex(center);
-      margin-left: 64px;
-      // height: fit-content;
-      // flex-direction: row;
+   @include landscape() {
+      @include flex();
+      padding-left: 34px;
    }
+
 }
 
 .cardsItem {
@@ -57,14 +60,6 @@
    border-radius: 16px;
 
 
-
-   @media (orientation: landscape) {
-      margin-bottom: 0;
-      margin-left: -64px;
-      width: 100%;
-      // min-height: 340px;
-   }
-
    @include media('desktopSmall') {
       margin-bottom: 0;
       margin-left: -64px;
@@ -72,18 +67,26 @@
       min-height: 340px;
    }
 
-   @include media('desktopMiddle') {}
-
 
    @include media('desktop') {
       min-height: 434px;
+   }
+
+   @include landscape() {
+      @include flex();
+      // margin-bottom: 24px;
+      // padding-bottom: 24px;
+      margin-left: -34px;
+      width: 100%;
+      margin-bottom: 0;
+      // height: 100%;
    }
 
    .box {
       position: relative;
       padding: 24px;
       // padding-bottom: 96px;
-      padding-bottom: 60px;
+      padding-bottom: 70px;
 
       background: $secondary-bg-color;
       background-clip: padding-box;
@@ -91,15 +94,6 @@
       border: solid 1.5px transparent;
       border-radius: 16px;
 
-
-      @media (orientation: landscape) {
-         padding-top: 10px;
-         padding-left: 10px;
-         padding-bottom: 10px;
-         padding-right: 80px;
-         height: 100%;
-         border-radius: 16px;
-      }
 
       @include media('desktopSmall') {
          padding-bottom: 24px;
@@ -110,6 +104,14 @@
 
       @include media('desktop') {
          padding: 32px 122px 32px 32px;
+      }
+
+      @include landscape() {
+         padding: 14px 40px 14px 14px;
+
+
+         // padding-bottom: 24px;
+
       }
    }
 
@@ -145,13 +147,10 @@
 
       color: $primary-text-color;
       font-weight: 400;
-      // font-size: 18px;
-      font-size: 16px;
+      font-size: 18px;
+      // font-size: 16px;
       line-height: 1.2;
 
-      @media (orientation: landscape) {
-         font-size: 12px;
-      }
 
       @include media('tablet') {
          margin-bottom: 16px;
@@ -166,6 +165,10 @@
       @include media('desktop') {
          font-size: 38px;
       }
+
+      @include landscape() {
+         font-size: 12px;
+      }
    }
 
    ul {
@@ -173,11 +176,6 @@
       margin-left: 6px;
       list-style: disc;
       list-style-position: inside;
-   }
-
-   p {
-      margin-bottom: 8px;
-
 
    }
 
@@ -195,8 +193,8 @@
          font-size: 16px;
       }
 
-      @media (orientation: landscape) {
-         font-size: 12px !important;
+      @include landscape() {
+         font-size: 12px;
       }
 
       @include media('desktopMiddle') {
@@ -219,9 +217,9 @@
       padding-bottom: 45px;
    }
 
-   @media (orientation: landscape) {
-      padding-bottom: 24px;
-      padding-right: 24px;
+   @include landscape() {
+      padding-bottom: 14px;
+      padding-right: 14px;
    }
 }
 

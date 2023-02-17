@@ -93,7 +93,12 @@
 }
 
 .textarea {
-   min-height: 135px;
+   min-height: 89px;
+
+   @include media('tablet') {
+      min-height: 135px;
+   }
+
 }
 
 .textarea::-webkit-scrollbar-track {
