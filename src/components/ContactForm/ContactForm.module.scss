@@ -2,9 +2,13 @@
 @import "../../shared/styles/mixins";
 
 .form {
-
    @include media('desktopSmall') {
       width: 50%;
+   }
+
+   @include landscape() {
+      width: 50%;
+      // padding-right: 120px;
    }
 }
 
@@ -14,6 +18,10 @@
 
    @include media('tablet') {
       margin-bottom: 32px;
+   }
+
+   @include landscape() {
+      margin-bottom: 18px;
    }
 }
 
@@ -99,6 +107,10 @@
       min-height: 135px;
    }
 
+   @include landscape() {
+      min-height: 75px;
+   }
+
 }
 
 .textarea::-webkit-scrollbar-track {
@@ -116,7 +128,6 @@
 }
 
 .error {
-
    position: absolute;
    top: calc(100% - 2px);
    left: 10px;
@@ -135,6 +146,11 @@
 
       font-size: 16px;
       line-height: 1.18;
+   }
+
+   @include landscape() {
+      top: calc(100%);
+      font-size: 13px;
    }
 
 }
@@ -193,7 +209,15 @@
    }
 }
 
+
+.successBox {
+   position: relative;
+}
+
 .successText {
+   position: absolute;
+   width: 100%;
+
    margin-top: 16px;
    padding: 16px 24px;
 

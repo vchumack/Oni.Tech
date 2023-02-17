@@ -10,12 +10,21 @@
       @include flex();
    }
 
+   @include landscape() {
+      @include flex();
+   }
+
 }
 
 .contactBox {
    @include media('desktopSmall') {
       width: 50%;
       padding-right: 160px;
+   }
+
+   @include landscape() {
+      width: 50%;
+      padding-right: 120px;
    }
 
 }
