@@ -7,7 +7,7 @@ export const Footer = ({ current, footerRef, isShow }) => {
 			ref={footerRef}
 			style={{
 				color: `${current % 2 !== 0 ? "black" : "white"}`,
-				bottom:`${isShow ? '0px': '-100%'}`
+				bottom: `${isShow ? "0px" : "-100%"}`,
 			}}
 		>
 			<div className={`container ${style.wrapper}`}>

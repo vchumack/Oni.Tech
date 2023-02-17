@@ -67,6 +67,7 @@ export const Header = ({ active, headerRef, current, isShow }) => {
 					</>
 				) : (
 					<div
+						className={style.burgerWrapper}
 						aria-expanded={isOpen}
 						aria-label="Open burger menu button"
 					>
