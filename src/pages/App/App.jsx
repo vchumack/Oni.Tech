@@ -1,6 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
@@ -14,15 +15,18 @@ import { ContactUs } from "../ContactUs/ContactUs";
 import "./App.scss";
 
 function App() {
+	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
+	const scrollSpeed = isBigScreen ? 1000 : 1700;
+
 	const [current, setCurrent] = useState(0);
 	const [active, setActive] = useState("home");
 	const [isShow, setIsShow] = useState(true);
 	const anchors = ["home", "expertise", "process", "portfolio", "contact"];
-	// console.log("active", active);
+
 	const onLeave = (_, destination) => {
 		setCurrent(destination.index);
 		setActive(destination.anchor);
-		// console.log("destination", destination);
+
 		setIsShow(false);
 	};
 	const afterLoad = () => setIsShow(true);
@@ -32,7 +36,7 @@ function App() {
 			<Header active={active} current={current} isShow={isShow} />
 
 			<ReactFullpage
-				scrollingSpeed={1000}
+				scrollingSpeed={scrollSpeed}
 				scrollOverflow={false}
 				licenseKey={"YOUR_KEY_HERE"}
 				onLeave={onLeave}
@@ -41,25 +45,13 @@ function App() {
 				menu={"#navbar"}
 				render={() => {
 					return (
-						<>
-							<ReactFullpage.Wrapper>
-								<section className="section hero">
-									<Home />
-								</section>
-								<section className="section expertise">
-									<Expertise />
-								</section>
-								<section className="section work-process">
-									<WorkProcess />
-								</section>
-								<section className="section portfolio">
-									<Portfolio />
-								</section>
-								<section className="section contactUs">
-									<ContactUs />
-								</section>
-							</ReactFullpage.Wrapper>
-						</>
+						<ReactFullpage.Wrapper>
+							<Home />
+							<Expertise />
+							<WorkProcess />
+							<Portfolio />
+							<ContactUs />
+						</ReactFullpage.Wrapper>
 					);
 				}}
 			/>

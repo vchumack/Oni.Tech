@@ -42,7 +42,7 @@
 		// -webkit-transition: -webkit-transform 0.8s;
 		border-width: 0.375rem;
 		border-radius: 1.5rem;
-		border: 8px solid #fef7e9;
+		border: 8px solid $portfolio-border;
 
 		left: 0;
 
@@ -52,7 +52,7 @@
 
 		@include media(desktopSmall) {
 			// flex-direction: row;
-			border: 1rem solid #fef7e9;
+			border: 1rem solid $portfolio-border;
 			border-radius: 2rem;
 		}
 	}
