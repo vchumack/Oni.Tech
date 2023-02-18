@@ -32,6 +32,7 @@ export const NavBar = ({ active, current }) => {
 							{active === link.current && (
 								<ActiveNav
 									width={"100%"}
+									height={5}
 									fill="currentColor"
 									className="activeNav"
 								/>

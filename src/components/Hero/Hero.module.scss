@@ -13,14 +13,14 @@
 
 	@include media(desktopSmall) {
 		background: no-repeat 100% 100% url("../../assets/hero-bg-desc.png"),
-			no-repeat 95% 0% url(../../assets/hero-circle.png);
+			no-repeat 95% 0% url("../../assets/hero-circle.png");
 		background-color: $secondary-bg-color;
 		background-size: 334px, 200px;
 	}
 
 	@include media(desktop) {
 		background: no-repeat 100% 100% url("../../assets/hero-bg-desc.png"),
-			no-repeat 95% 0% url(../../assets/hero-circle.png);
+			no-repeat 95% 0% url("../../assets/hero-circle.png");
 		background-color: $secondary-bg-color;
 		background-size: 534px, 300px;
 	}
@@ -86,12 +86,7 @@
 		transition: $transition;
 
 		&:hover {
-			box-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3),
-				-1px 1px 2px rgba(190, 182, 167, 0.5),
-				inset -5px -5px 10px rgba(190, 182, 167, 0.2),
-				inset 5px 5px 10px rgba(190, 182, 167, 0.2),
-				inset -5px 5px 10px rgba(255, 255, 255, 0.9),
-				inset 5px -5px 13px rgba(190, 182, 167, 0.9);
+			box-shadow: $hero-button-shadow;
 		}
 
 		@include media(desktopMiddle) {

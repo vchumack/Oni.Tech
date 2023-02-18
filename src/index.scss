@@ -88,14 +88,7 @@ select {
 // Section
 
 section {
-	// padding: 150px 0 77px 0;
 	padding: 70px 0;
-	// padding-top: 100px;
-	// height: 100vh;
-
-	// @include media(desktopSmall) {
-	// 	padding-top: 150px;
-	// }
 }
 
 .work-process {
@@ -110,10 +103,6 @@ section {
 	}
 }
 
-// main {
-// 	// height: 100vh;
-// }
-
 /* Applying styles to buttons */
 
 button {
@@ -122,11 +111,10 @@ button {
 }
 
 body {
-	// overflow: scroll;
 	font-family: $fontFamilyBase;
-	background-color: black;
+	background-color: $secondary-text-color;
 	/* Default basic settings for body*/
-	// min-height: 100vh;
+
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }
@@ -142,12 +130,12 @@ body {
 }
 
 .active {
-	color: white;
+	color: $primary-text-color;
 	position: relative;
 }
 
 .activeOdd {
-	color: black;
+	color: $secondary-text-color;
 	position: relative;
 }
 
@@ -196,7 +184,7 @@ body {
 
 .expertise {
 	position: relative;
-	background: linear-gradient(253.56deg, #fffaf1 4.77%, #f4e9d5 98.57%);
+	background: $linear-expertise-bg;
 }
 
 .portfolio {
@@ -251,7 +239,6 @@ body {
 	}
 
 	@include media(desktopSmall) {
-		// padding: 40px 80px;
 		justify-content: space-around;
 	}
 

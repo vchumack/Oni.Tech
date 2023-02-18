@@ -46,7 +46,7 @@ nav::-webkit-scrollbar {
 	width: 80%;
 	padding: 15px 0px;
 	text-align: center;
-	border-bottom: 0.5px solid rgba(245, 233, 214, 0.5);
+	border-bottom: 0.5px solid $burger-nav-underline;
 
 	&:last-of-type {
 		border-bottom: none;

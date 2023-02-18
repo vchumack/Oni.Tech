@@ -2,230 +2,218 @@
 @import "../../shared/styles/mixins";
 
 .form {
-   @include media('desktopSmall') {
-      width: 50%;
-   }
+	@include media("desktopSmall") {
+		width: 50%;
+	}
 
-   @include landscape() {
-      width: 50%;
-      // padding-right: 120px;
-   }
+	@include landscape() {
+		width: 50%;
+		// padding-right: 120px;
+	}
 }
 
 .fieldBox {
-   position: relative;
-   margin-bottom: 18px;
+	position: relative;
+	margin-bottom: 18px;
 
-   @include media('tablet') {
-      margin-bottom: 32px;
-   }
+	@include media("tablet") {
+		margin-bottom: 32px;
+	}
 
-   @include landscape() {
-      margin-bottom: 18px;
-   }
+	@include landscape() {
+		margin-bottom: 18px;
+	}
 }
 
 .label {
-   position: relative;
+	position: relative;
 
-   @include flex(_, center);
-   // display: flex;
-   // align-items: center;
+	@include flex(_, center);
+	// display: flex;
+	// align-items: center;
 
-   background: $secondary-bg-color;
-   background-image: $linear-bg-color;
+	background: $secondary-bg-color;
+	background-image: $linear-bg-color;
 
-   background-clip: padding-box;
-   border: solid 1.5px transparent;
-   border-radius: 16px;
-   outline: none;
+	background-clip: padding-box;
+	border: solid 1.5px transparent;
+	border-radius: 16px;
+	outline: none;
 }
 
 .label::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   z-index: -1;
-   margin: -1.5px;
-   border-radius: 16px;
-   background: $linear-border-color;
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	margin: -1.5px;
+	border-radius: 16px;
+	background: $linear-border-color;
 
-   transition: $transition;
+	transition: $transition;
 }
 
 .input {
-   position: relative;
-   width: 100%;
+	position: relative;
+	width: 100%;
 
-   display: flex;
-   padding: 16px;
+	display: flex;
+	padding: 16px;
 
-   background: transparent;
-   outline: none;
-   border: none;
+	background: transparent;
+	outline: none;
+	border: none;
 
-   font-family: inherit;
-   font-weight: 400;
-   font-size: 16px;
-   line-height: 19px;
-   color: white;
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	color: $primary-text-color;
 
+	@include media("desktopSmall") {
+		padding: 20px;
+		font-size: 22px;
+		line-height: 1.2;
+	}
 
-   @include media('desktopSmall') {
-      padding: 20px;
-      font-size: 22px;
-      line-height: 1.2;
-   }
+	&::placeholder {
+		font-weight: 400;
+		color: $third-text-color;
+		font-size: 16px;
+		line-height: 19px;
 
-
-   &::placeholder {
-      font-weight: 400;
-      color: $third-text-color;
-      font-size: 16px;
-      line-height: 19px;
-
-
-      @include media('desktopSmall') {
-         font-size: 22px;
-      }
-   }
-
-
+		@include media("desktopSmall") {
+			font-size: 22px;
+		}
+	}
 }
 
 .label:focus-within::before {
-   background: $linear-focus-border-color;
+	background: $linear-focus-border-color;
 }
 
 .textarea {
-   min-height: 89px;
+	min-height: 89px;
 
-   @include media('tablet') {
-      min-height: 120px;
-   }
+	@include media("tablet") {
+		min-height: 120px;
+	}
 
-   @include landscape() {
-      min-height: 75px;
-   }
-
+	@include landscape() {
+		min-height: 75px;
+	}
 }
 
 .textarea::-webkit-scrollbar-track {
-   background: $scrollbar-color;
-   border-radius: 10px;
+	background: $scrollbar-color;
+	border-radius: 10px;
 }
 
 .textarea::-webkit-scrollbar-thumb {
-   border-radius: 10px;
-   background-color: $secondary-scrollbar-color;
+	border-radius: 10px;
+	background-color: $secondary-scrollbar-color;
 }
 
 .textarea::-webkit-scrollbar {
-   width: 10px;
+	width: 10px;
 }
 
 .error {
-   position: absolute;
-   top: calc(100% - 2px);
-   left: 10px;
+	position: absolute;
+	top: calc(100% - 2px);
+	left: 10px;
 
-   font-size: 13px;
+	font-size: 13px;
 
-   background: $linear-error-color;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-clip: text;
+	background: $linear-error-color;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 
+	@include media("tablet") {
+		top: calc(100% + 3px);
+		left: 12px;
 
-   @include media('tablet') {
-      top: calc(100% + 3px);
-      left: 12px;
+		font-size: 16px;
+		line-height: 1.18;
+	}
 
-      font-size: 16px;
-      line-height: 1.18;
-   }
-
-   @include landscape() {
-      top: calc(100%);
-      font-size: 13px;
-   }
-
+	@include landscape() {
+		top: calc(100%);
+		font-size: 13px;
+	}
 }
 
-.error+.label::before {
-   background: $linear-error-color;
+.error + .label::before {
+	background: $linear-error-color;
 }
 
 .submitBox {
-   @include media('desktopSmall') {
-      text-align: end;
-   }
+	@include media("desktopSmall") {
+		text-align: end;
+	}
 
+	.submit {
+		padding: 16px 32px;
+		width: 100%;
 
-   .submit {
-      padding: 16px 32px;
-      width: 100%;
+		color: $secondary-text-color;
+		background-color: $third-bg-color;
 
-      color: $secondary-text-color;
-      background-color: $third-bg-color;
+		font-weight: 800;
+		font-size: 16px;
+		line-height: 1.37;
 
-      font-weight: 800;
-      font-size: 16px;
-      line-height: 1.37;
+		border-radius: 12px;
 
-      border-radius: 12px;
+		transition: $transition;
 
-      transition: $transition;
+		@include media("desktopSmall") {
+			padding-top: 21px;
+			padding-bottom: 21px;
+			width: 30%;
 
-      @include media('desktopSmall') {
-         padding-top: 21px;
-         padding-bottom: 21px;
-         width: 30%;
+			font-size: 20px;
+		}
 
-         font-size: 20px;
+		@include media("desktopMiddle") {
+			padding-top: 21px;
+			padding-bottom: 21px;
+			width: 25%;
 
-      }
+			font-size: 24px;
+		}
+	}
 
-      @include media('desktopMiddle') {
-         padding-top: 21px;
-         padding-bottom: 21px;
-         width: 25%;
+	.submit:hover,
+	.submit:focus {
+		box-shadow: $submit-shadow;
+	}
 
-         font-size: 24px;
-
-      }
-   }
-
-   .submit:hover,
-   .submit:focus {
-      box-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3), -1px 1px 2px rgba(190, 182, 167, 0.5), inset -5px -5px 10px rgba(190, 182, 167, 0.2), inset 5px 5px 10px rgba(190, 182, 167, 0.2), inset -5px 5px 10px rgba(255, 255, 255, 0.9), inset 5px -5px 13px rgba(190, 182, 167, 0.9);
-   }
-
-   .submit:active {
-      background: $primary-bg-color;
-   }
+	.submit:active {
+		background: $primary-bg-color;
+	}
 }
 
-
 .successBox {
-   position: relative;
+	position: relative;
 }
 
 .successText {
-   position: absolute;
-   width: 100%;
+	position: absolute;
+	width: 100%;
 
-   margin-top: 16px;
-   padding: 16px 24px;
+	margin-top: 16px;
+	padding: 16px 24px;
 
-   background-color: $success-bg-color;
+	background-color: $success-bg-color;
 
-   font-size: 16px;
-   line-height: 1.18;
-   text-align: center;
+	font-size: 16px;
+	line-height: 1.18;
+	text-align: center;
 
-   border-radius: 16px;
+	border-radius: 16px;
 }

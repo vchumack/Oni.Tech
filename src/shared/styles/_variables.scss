@@ -15,6 +15,7 @@ $secondary-text-color: #000000;
 $third-text-color: rgba(255, 255, 255, 0.5);
 $fourth-text-color: rgba(255, 255, 255, 0.7);
 $card-number-color: rgba(0, 0, 0, 0.4);
+$portfolio-border: #fef7e9;
 
 $primary-bg-color: #ffffff;
 $secondary-bg-color: #000000;
@@ -22,10 +23,11 @@ $third-bg-color: #f5e9d6;
 $fourth-bg-color: #f4e9d6;
 $success-bg-color: rgba(189, 255, 0, 0.17);
 $card-background: rgba(255, 255, 255, 0.44);
-$benefits-bg: linear-gradient(253.56deg, #fffaf1 4.77%, #f4e9d5 98.57%);
+$burger-nav-underline: rgba(245, 233, 214, 0.5);
 $scrollbar-color: #2e2e2c;
 $secondary-scrollbar-color: #04867586;
 
+$linear-expertise-bg: linear-gradient(253.56deg, #fffaf1 4.77%, #f4e9d5 98.57%);
 $card-shadow: 130.158px 118.469px 213px rgba(195, 174, 148, 0.14),
 	65.8925px 59.9748px 92.8547px rgba(195, 174, 148, 0.0945),
 	26.0316px 23.6938px 34.6125px rgba(195, 174, 148, 0.07);
@@ -68,3 +70,17 @@ $linear-error-color: linear-gradient(
 	#de3737 47.86%,
 	#991616 98.95%
 );
+
+$hero-button-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3),
+	-1px 1px 2px rgba(190, 182, 167, 0.5),
+	inset -5px -5px 10px rgba(190, 182, 167, 0.2),
+	inset 5px 5px 10px rgba(190, 182, 167, 0.2),
+	inset -5px 5px 10px rgba(255, 255, 255, 0.9),
+	inset 5px -5px 13px rgba(190, 182, 167, 0.9);
+
+$submit-shadow: 1px -1px 2px rgba(255, 255, 255, 0.3),
+	-1px 1px 2px rgba(190, 182, 167, 0.5),
+	inset -5px -5px 10px rgba(190, 182, 167, 0.2),
+	inset 5px 5px 10px rgba(190, 182, 167, 0.2),
+	inset -5px 5px 10px rgba(255, 255, 255, 0.9),
+	inset 5px -5px 13px rgba(190, 182, 167, 0.9);

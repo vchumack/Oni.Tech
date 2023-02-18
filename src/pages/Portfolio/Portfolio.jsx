@@ -4,12 +4,13 @@ import { PortfolioList } from "./PortfolioList/PortfolioList";
 
 export const Portfolio = () => {
 	return (
-		// <section className={style.portfolio} id="portfolio">
-
-		<div className={style.portfolio__container}>
-			<h2 className={`${style.portfolio__title} title`}>OUR PORTFOLIO</h2>
-			<PortfolioList />
-		</div>
-		// </section>
+		<section className="section portfolio">
+			<div className={style.portfolio__container}>
+				<h2 className={`${style.portfolio__title} title`}>
+					OUR PORTFOLIO
+				</h2>
+				<PortfolioList />
+			</div>
+		</section>
 	);
 };
