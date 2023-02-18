@@ -2,7 +2,6 @@
 @import "../../shared/styles/mixins";
 
 .wrapper {
-	// margin: auto auto !important;
 
 	@media screen and (max-width: 1099.9px) {
 		// min-height: 700px;
@@ -13,7 +12,6 @@
 
 .title {
 	margin-bottom: 32px;
-	// margin-bottom: 20px;
 
 	color: $primary-text-color;
 
@@ -64,18 +62,14 @@
 
 	@include landscape() {
 		@include flex();
-		// margin-bottom: 24px;
-		// padding-bottom: 24px;
 		margin-left: -34px;
 		width: 100%;
 		margin-bottom: 0;
-		// height: 100%;
 	}
 
 	.box {
 		position: relative;
 		padding: 24px;
-		// padding-bottom: 96px;
 		padding-bottom: 70px;
 
 		background: $secondary-bg-color;
@@ -97,8 +91,6 @@
 
 		@include landscape() {
 			padding: 14px 40px 14px 14px;
-
-			// padding-bottom: 24px;
 		}
 	}
 
@@ -133,7 +125,6 @@
 		color: $primary-text-color;
 		font-weight: 400;
 		font-size: 18px;
-		// font-size: 16px;
 		line-height: 1.2;
 
 		@include media("tablet") {
@@ -166,7 +157,6 @@
 	li {
 		color: $fourth-text-color;
 		font-weight: 400;
-		// font-size: 12px;
 		font-size: 10px;
 		line-height: 1.41;
 
@@ -198,11 +188,3 @@
 		padding-right: 14px;
 	}
 }
-
-// .cardsItem:not(:last-child) div {
-
-//    @include media('desktopSmall') {
-//       padding-right: 100px;
-//    }
-
-// }

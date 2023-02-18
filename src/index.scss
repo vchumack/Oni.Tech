@@ -75,6 +75,13 @@ select {
 	font-family: inherit;
 }
 
+/* Applying styles to buttons */
+
+button {
+	margin: 0;
+	cursor: pointer;
+}
+
 /* Removing all animations and transitions for people who prefer not to use them */
 @media (prefers-reduced-motion: reduce) {
 	* {
@@ -85,29 +92,16 @@ select {
 	}
 }
 
+/* Cleaning up the autocomplete styles of an input */
+
+:-webkit-autofill {
+	transition: all 5000s ease-in-out 0s;
+}
+
 // Section
 
 section {
 	padding: 70px 0;
-}
-
-.work-process {
-	@include landscape() {
-		padding: 43px 0 43px 0;
-	}
-}
-
-.contactUs {
-	@include landscape() {
-		padding: 43px 0 43px 0;
-	}
-}
-
-/* Applying styles to buttons */
-
-button {
-	margin: 0;
-	cursor: pointer;
 }
 
 body {
@@ -153,9 +147,8 @@ body {
 	pointer-events: none;
 }
 
-:-webkit-autofill {
-	transition: all 5000s ease-in-out 0s;
-}
+
+/* Applying styles to site sections */
 
 .hero {
 	position: relative;
@@ -191,8 +184,19 @@ body {
 	background-color: $third-bg-color;
 }
 
+.work-process {
+	@include landscape() {
+		padding: 43px 0 43px 0;
+	}
+}
+
 .contactUs {
+
 	color: $primary-text-color;
+
+	@include landscape() {
+		padding: 43px 0 43px 0;
+	}
 }
 
 .title {
@@ -215,10 +219,7 @@ body {
 	}
 }
 
-// .fp-watermark {
-// 	display: none;
-// }
-
+/* Styles for scrolling library classes */
 .fp-table:nth-child(2) {
 	position: relative;
 	display: block;
@@ -260,20 +261,6 @@ body {
 	}
 }
 
-// .fp-table:nth-child(3) .container {
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: flex-start;
-// 	height: 100%;
-
-// 	@include media(desktopSmall) {
-// 		justify-content: center;
-// 	}
-
-// 	@include landscape() {
-// 		justify-content: center;
-// 	}
-// }
 
 .fp-table:nth-child(5) {
 	display: block;
@@ -289,23 +276,8 @@ body {
 	justify-content: flex-start;
 	height: 100%;
 
-	// @include media(desktopSmall) {
-	// 	justify-content: center;
-	// }
-
-	// @include landscape() {
-	// 	justify-content: center;
-	// }
 }
 
 .fp-table:nth-child(1) {
 	display: block;
 }
-
-// .fp-table:nth-child(3) {
-// 	// display: block;
-
-// 	@include media(desktopSmall) {
-// 		display: flex;
-// 	}
-// }
