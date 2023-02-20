@@ -102,6 +102,7 @@ button {
 
 section {
 	padding: 70px 0;
+
 	@include landscape() {
 		padding: 40px 0;
 	}
@@ -235,9 +236,11 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 24px;
+
 	@include landscape {
 		gap: 50px;
 	}
+
 	@include media(tablet) {
 		padding: 0 80px;
 	}
@@ -257,7 +260,8 @@ body {
 }
 
 .fp-table:nth-child(3),
-.fp-table:nth-child(4) {
+.fp-table:nth-child(4),
+.fp-table:nth-child(5) {
 	display: block;
 
 	@include media(desktopSmall) {
@@ -265,13 +269,13 @@ body {
 	}
 }
 
-.fp-table:nth-child(5) {
-	display: block;
+// .fp-table:nth-child(5) {
+// 	display: block;
 
-	@include media(desktopSmall) {
-		padding-top: 90px;
-	}
-}
+// 	@include media(desktopSmall) {
+// 		padding-top: 150px;
+// 	}
+// }
 
 .fp-table:nth-child(5) .container {
 	display: flex;
@@ -282,4 +286,10 @@ body {
 
 .fp-table:nth-child(1) {
 	display: block;
+}
+
+.fp-warning,
+.fp-watermark {
+
+	left: 0;
 }
