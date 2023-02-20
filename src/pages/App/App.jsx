@@ -1,7 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import { useMedia } from "../../shared/hooks/useMedia";
 
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
@@ -12,11 +12,10 @@ import { WorkProcess } from "../WorkProcess/WorkProcess";
 import { Portfolio } from "../Portfolio/Portfolio";
 import { ContactUs } from "../ContactUs/ContactUs";
 
-import "./App.scss";
-
 function App() {
-	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
-	const scrollSpeed = isBigScreen ? 1000 : 1700;
+	const { isSmallDesktop, isHighScreen, isPortrait } = useMedia();
+
+	const scrollSpeed = isSmallDesktop ? 1000 : 1700;
 
 	const [current, setCurrent] = useState(0);
 	const [active, setActive] = useState("home");
@@ -55,7 +54,9 @@ function App() {
 					);
 				}}
 			/>
-			<Footer current={current} isShow={isShow} />
+			{(isPortrait || isHighScreen) && (
+				<Footer current={current} isShow={isShow} />
+			)}
 		</>
 	);
 }

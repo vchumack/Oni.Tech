@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import { removeScroll } from "../../shared/functions/removeScroll";
+import { useMedia } from "../../shared/hooks/useMedia";
 
 import { Logo } from "../Logo/Logo";
 import { NavBar } from "./NavBar/NavBar";
 import { MobileNav } from "./MobileNav/MobileNav";
 import { ReactComponent as BurgerLines } from "../../assets/svg/burgerLines.svg";
 
-
 import style from "../Header/Header.module.scss";
 
 export const Header = ({ active, headerRef, current, isShow }) => {
 	const [isOpen, setIsOpen] = useState(false);
-
-	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
+	const { isTablet } = useMedia();
 	const isOdd = current % 2 !== 0;
 
 	const toggleBurger = () => {
@@ -34,7 +32,7 @@ export const Header = ({ active, headerRef, current, isShow }) => {
 		>
 			<div className={`container ${style.wrapper}`}>
 				<Logo isOdd={isOdd} />
-				{isBigScreen ? (
+				{isTablet ? (
 					<>
 						<NavBar current={current} active={active} />
 						<div className={style.contact}>

@@ -1,18 +1,17 @@
-import { useMediaQuery } from "react-responsive";
+import { useMedia } from "../../shared/hooks/useMedia";
 import { whyUs } from "../../components/data/whyUs";
 
 import style from "../Expertise/Expertise.module.scss";
 
 export const Expertise = () => {
-	const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
-
+	const { isTablet } = useMedia();
 	return (
 		<section className="section expertise">
 			<div className="container">
 				<h2 className={`${style.heading} title`}>
 					BENEFITS OF WORKING WITH US
 				</h2>
-				{isBigScreen && (
+				{isTablet && (
 					<div className={`${style.back} `}>
 						<p>why</p>
 						<p>us</p>
