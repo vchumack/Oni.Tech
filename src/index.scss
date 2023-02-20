@@ -102,6 +102,9 @@ button {
 
 section {
 	padding: 70px 0;
+	@include landscape() {
+		padding: 40px 0;
+	}
 }
 
 body {
@@ -147,7 +150,6 @@ body {
 	pointer-events: none;
 }
 
-
 /* Applying styles to site sections */
 
 .hero {
@@ -191,7 +193,6 @@ body {
 }
 
 .contactUs {
-
 	color: $primary-text-color;
 
 	@include landscape() {
@@ -253,14 +254,14 @@ body {
 	}
 }
 
-.fp-table:nth-child(3) {
+.fp-table:nth-child(3),
+.fp-table:nth-child(4) {
 	display: block;
 
 	@include media(desktopSmall) {
 		padding-top: 150px;
 	}
 }
-
 
 .fp-table:nth-child(5) {
 	display: block;
@@ -275,7 +276,6 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	height: 100%;
-
 }
 
 .fp-table:nth-child(1) {

@@ -60,50 +60,55 @@ const EXPERTISE = [
 export const PortfolioList = () => {
 	const [open, setOpen] = useState(0);
 	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
-	// console.log("open", open);
+	const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+
+	// console.log("isPortrait", isPortrait);
 	return (
 		<ul className={style.list}>
-			{EXPERTISE.map((expertise, index) => (
-				<li
-					key={index}
-					className={style.list__item}
-					style={
-						isBigScreen
-							? {
-									// transform: `translateY(0)`,
-									transform: `translateX(-${index * 1.9}rem)`,
-									zIndex: EXPERTISE.length - index,
-									// {open === index ? flexBasis:"49%":flexBasis:"9.5%"},
-									// ":firstOfType": {
-									// 	left: 0,
-									// 	flexBasis:
-									// 		open === index ? "49%" : "9.5%",
-									// },
-
-									flex: open === index ? "1 0 49%" : "1 0 9%",
-							  }
-							: {
-									zIndex: EXPERTISE.length - index,
-									transform: `translate(0,-${
-										index * 1.5
-									}rem)`,
-									// transform: `translateY(-${index * 1.5}rem)`,
-									flex:
-										open === index
-											? "1 0 45%"
-											: "1 0 11.5%",
-							  }
-					}
-				>
-					<PortfolioItem
-						isBigScreen={isBigScreen}
-						index={index}
-						setOpen={setOpen}
-						isOpen={open === index}
-						expertise={expertise}
-					/>
-				</li>
-			))}
+			{EXPERTISE.map((expertise, index) => {
+				const translateForMobile = isPortrait
+					? `translate(0,-${index * 1.5}rem)`
+					: `translateX(-${index * 1.9}rem)`;
+				const flexForMobile = isPortrait
+					? open === index
+						? "1 0 45%"
+						: "1 0 11.5%"
+					: open === index
+					? "1 0 45%"
+					: "1 0 19.5%";
+				return (
+					<li
+						key={index}
+						className={style.list__item}
+						style={
+							isBigScreen
+								? {
+										transform: `translateX(-${
+											index * 1.9
+										}rem)`,
+										zIndex: EXPERTISE.length - index,
+										flex:
+											open === index
+												? "1 0 49%"
+												: "1 0 9%",
+								  }
+								: {
+										zIndex: EXPERTISE.length - index,
+										transform: translateForMobile,
+										flex: flexForMobile,
+								  }
+						}
+					>
+						<PortfolioItem
+							isBigScreen={isBigScreen}
+							index={index}
+							setOpen={setOpen}
+							isOpen={open === index}
+							expertise={expertise}
+						/>
+					</li>
+				);
+			})}
 		</ul>
 	);
 };

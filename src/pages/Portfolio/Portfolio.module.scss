@@ -24,5 +24,8 @@
 		@include media(desktopMiddle) {
 			margin-bottom: 40px;
 		}
+		@include landscape() {
+			margin-bottom: 10px;
+		}
 	}
 }
