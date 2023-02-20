@@ -77,6 +77,12 @@
       line-height: 1.2;
    }
 
+   @include landscape() {
+      padding: 10px;
+      min-height: 50px;
+      font-size: 8px;
+   }
+
    &::placeholder {
       font-weight: 400;
       color: $third-text-color;
@@ -101,7 +107,8 @@
    }
 
    @include landscape() {
-      min-height: 75px;
+      min-height: 65px;
+      font-size: 8px;
    }
 }
 
@@ -141,7 +148,7 @@
 
    @include landscape() {
       top: calc(100%);
-      font-size: 13px;
+      font-size: 10px;
    }
 }
 
@@ -151,6 +158,10 @@
 
 .submitBox {
    @include media("desktopSmall") {
+      text-align: end;
+   }
+
+   @include landscape() {
       text-align: end;
    }
 
@@ -183,6 +194,12 @@
          width: 25%;
 
          font-size: 24px;
+      }
+
+      @include landscape() {
+         padding: 8px 12px;
+         font-size: 10px;
+         width: 50%;
       }
    }
 
