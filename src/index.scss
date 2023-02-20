@@ -235,7 +235,9 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 24px;
-
+	@include landscape {
+		gap: 50px;
+	}
 	@include media(tablet) {
 		padding: 0 80px;
 	}
