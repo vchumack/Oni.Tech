@@ -31,6 +31,15 @@
 		// margin-top: 8px;
 	}
 
+	@include landscape() {
+		flex-direction: row;
+		max-height: 100%;
+		position: relative;
+		display: flex;
+		margin-left: 5.5rem;
+		justify-content: center;
+	}
+
 	&__item {
 		display: flex;
 		overflow: hidden;
@@ -54,6 +63,9 @@
 			// flex-direction: row;
 			border: 1rem solid $portfolio-border;
 			border-radius: 2rem;
+		}
+		@include landscape() {
+			transition: none;
 		}
 	}
 }
