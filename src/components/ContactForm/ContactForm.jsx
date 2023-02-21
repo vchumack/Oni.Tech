@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useMediaQuery } from "react-responsive";
+import { useMedia } from "../../shared/hooks/useMedia";
 import axios from "axios";
 
 import style from "../ContactForm/ContactForm.module.scss";
@@ -7,13 +7,14 @@ import style from "../ContactForm/ContactForm.module.scss";
 export const ContactForm = () => {
 	const {
 		register,
-		formState: { errors, isValid, isSubmitSuccessful, isSubmitting },
+		formState: { errors, isSubmitSuccessful },
 		handleSubmit,
 		reset,
 	} = useForm({
 		mode: "all",
 	});
-	const isBigScreen = useMediaQuery({ query: "(min-width: 1100px)" });
+
+	const { isSmallDesktop } = useMedia();
 
 	const onSubmit = async (data) => {
 		let message = `<i>Application from the website</i>\n`;
@@ -100,7 +101,7 @@ export const ContactForm = () => {
 						name="method"
 						id="method"
 						placeholder={
-							isBigScreen
+							isSmallDesktop
 								? "Convenient Method of Communication"
 								: "Method of Communication"
 						}
@@ -139,7 +140,7 @@ export const ContactForm = () => {
 					type="button"
 					className={style.submit}
 				>
-					{isBigScreen ? "Send" : "Contact us"}
+					{isSmallDesktop ? "Send" : "Contact us"}
 				</button>
 			</div>
 			{isSubmitSuccessful && (
