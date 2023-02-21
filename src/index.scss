@@ -291,5 +291,7 @@ body {
 .fp-warning,
 .fp-watermark {
 
-	left: 0;
+	@include landscape() {
+		left: 0;
+	}
 }

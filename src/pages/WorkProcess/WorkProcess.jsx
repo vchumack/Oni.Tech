@@ -1,3 +1,5 @@
+import { workProcess } from "../../components/data/workProcess";
+
 import style from "../WorkProcess/WorkProcess.module.scss";
 
 export const WorkProcess = () => {
@@ -6,48 +8,21 @@ export const WorkProcess = () => {
 			<div className={`${style.wrapper} container`}>
 				<h2 className={`${style.title} title`}>DEVELOPMENT STEPS</h2>
 				<ul className={style.cardsList}>
-					<li className={style.cardsItem}>
-						<div className={style.box}>
-							<h3>Design and Analytics</h3>
-							<p>
-								Develop the design based on UI/UX product
-								experience and conducted business analysis. On
-								the way out, you get a cool design and a clear
-								product launch plan.
-							</p>
-						</div>
-					</li>
-					<li className={style.cardsItem}>
-						<div className={style.box}>
-							<h3>MVP development</h3>
-							<p>
-								We determine the functionality, the time frame,
-								the cost of implementation and the amount of
-								resources allocated. We prepare technical
-								documentation for the start of development. We
-								launch development and implement releases every
-								2 weeks. You will always have a clear idea of
-								the progress.
-							</p>
-						</div>
-					</li>
-					<li className={style.cardsItem}>
-						<div className={style.box}>
-							<h3>Release and maintenance</h3>
-							<p>
-								We assign a special team to work with requests
-								for a new product and quickly solve all emerging
-								problems such as:{" "}
-							</p>
-
-							<ul>
-								<li>Raising funds</li>
-								<li>Formation and testing of hypotension</li>
-								<li>Client needs investigatioon</li>
-								<li>Adapting the product to market demands</li>
-							</ul>
-						</div>
-					</li>
+					{workProcess.map((item, i) => (
+						<li key={i} className={style.cardsItem}>
+							<div className={style.box}>
+								<h3>{item.h3}</h3>
+								<p>{item.p}</p>
+								{item?.list && (
+									<ul>
+										{item.list.map((li) => (
+											<li>{li.li}</li>
+										))}
+									</ul>
+								)}
+							</div>
+						</li>
+					))}
 				</ul>
 			</div>
 		</section>
